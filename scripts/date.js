@@ -1,10 +1,10 @@
-
+// Date Functions for Footer
 document.addEventListener("DOMContentLoaded", () => {
-  const currentYearElement = document.getElementById("currentYear")
+  // Set current year for copyright
   const currentYear = new Date().getFullYear()
-  currentYearElement.textContent = currentYear
+  document.getElementById("currentyear").textContent = currentYear
 
-  const lastModifiedElement = document.getElementById("lastModified")
-  lastModifiedElement.textContent = `Last Update: ${document.lastModified}`
+  // Set last modified date
+  document.getElementById("lastModified").textContent = `Last Update: ${document.lastModified}`
 })
 

@@ -1,0 +1,56 @@
+/* Large Screen Styles */
+@media screen and (min-width: 1024px) {
+  /* Header Adjustments */
+  .header-content {
+    padding: 1rem 2rem;
+  }
+
+  .logo-container img {
+    width: 100px;
+  }
+
+  .title-container h1 {
+    font-size: 1.8rem;
+  }
+
+  .title-container h2 {
+    font-size: 1.3rem;
+  }
+
+  #hamburger-btn {
+    display: none;
+  }
+
+  /* Navigation */
+  nav ul {
+    display: flex;
+    justify-content: space-around;
+  }
+
+  nav li {
+    border-bottom: none;
+    flex: 1;
+    text-align: center;
+  }
+
+  /* Directory Grid */
+  #directory-container.grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  /* List View Adjustments */
+  .list .member-card {
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+  }
+
+  /* Main Content */
+  main {
+    padding: 2rem;
+  }
+
+  /* Footer */
+  footer {
+    padding: 2rem;
+  }
+}
+

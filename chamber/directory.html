@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Araucania Chamber of Commerce Directory - Find local businesses and services in Araucania, Chile">
+    <meta name="author" content="Josue Neiculeo">
+    
+    <title>Araucania Chamber of Commerce | Directory</title>
+    
+    <!-- CSS Files -->
+    <link rel="stylesheet" href="styles/normalize.css">
+    <link rel="stylesheet" href="styles/base.css">
+    <link rel="stylesheet" href="styles/medium.css">
+    <link rel="stylesheet" href="styles/large.css">
+    
+    <!-- JavaScript Files -->
+    <script src="scripts/directory.js" defer></script>
+</head>
+<body>
+    <header>
+        <div class="header-content">
+            <div class="logo-container">
+                <img src="images/logo.png" alt="Araucania Chamber of Commerce Logo" width="60" height="60">
+                <div class="title-container">
+                    <h1>Araucania</h1>
+                    <h2>Chamber of Commerce</h2>
+                </div>
+            </div>
+            <div class="social-container">
+                <a href="https://facebook.com" target="_blank">
+                    <img src="images/facebook.png" alt="Facebook" width="30" height="30">
+                </a>
+                <a href="https://linkedin.com" target="_blank">
+                    <img src="images/linkedin.png" alt="LinkedIn" width="30" height="30">
+                </a>
+            </div>
+            <button id="hamburger-btn" aria-label="Toggle Menu">☰</button>
+        </div>
+        <nav>
+            <ul id="primary-nav">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="discover.html">Discover</a></li>
+                <li class="active"><a href="directory.html">Directory</a></li>
+                <li><a href="join.html">Join</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+        </nav>
+        <div class="date-banner" id="current-date"></div>
+    </header>
+    
+    <main class="directory-main">
+        <h1>Business Directory</h1>
+        
+        <div class="view-toggle">
+            <button id="grid-btn" class="active" aria-label="Grid View">
+                <img src="images/grid.png" alt="Grid View" width="20" height="20">
+            </button>
+            <button id="list-btn" aria-label="List View">
+                <img src="images/list.png" alt="List View" width="20" height="20">
+            </button>
+        </div>
+        
+        <div id="directory-container" class="grid"></div>
+    </main>
+    
+    <footer>
+        <div class="footer-top">
+            <div class="footer-logo">
+                <img src="images/logo.png" alt="Araucania Chamber of Commerce Logo" width="60" height="60">
+                <div>
+                    <h3>Araucania Chamber of Commerce</h3>
+                    <p>123 Main Street, Temuco, Araucania, Chile</p>
+                </div>
+            </div>
+            <div class="footer-contact">
+                <p>info@araucaniachamber.org</p>
+                <p>+56 45 123 4567</p>
+                <p><a href="https://maps.google.com" target="_blank">Location Map</a></p>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; <span id="current-year"></span> Araucania Chamber of Commerce | Josue Neiculeo | WDD 231</p>
+            <p id="last-modified"></p>
+        </div>
+    </footer>
+</body>
+</html>
+

@@ -1,5 +1,6 @@
-
+// Course Information and Filtering
 document.addEventListener("DOMContentLoaded", () => {
+  // Course data array
   const courses = [
     {
       code: "CSE 110",
@@ -7,13 +8,6 @@ document.addEventListener("DOMContentLoaded", () => {
       credits: 3,
       completed: true,
       subject: "CSE",
-    },
-    {
-      code: "WDD 130",
-      name: "Web Fundamentals",
-      credits: 3,
-      completed: true,
-      subject: "WDD",
     },
     {
       code: "CSE 111",
@@ -30,74 +24,82 @@ document.addEventListener("DOMContentLoaded", () => {
       subject: "CSE",
     },
     {
+      code: "WDD 130",
+      name: "Web Fundamentals",
+      credits: 3,
+      completed: true,
+      subject: "WDD",
+    },
+    {
       code: "WDD 131",
-      name: "Introduction to CSS",
+      name: "Web Design",
       credits: 3,
       completed: true,
       subject: "WDD",
     },
     {
       code: "WDD 231",
-      name: "Advanced CSS",
+      name: "Web Frontend Development I",
       credits: 3,
       completed: false,
       subject: "WDD",
     },
   ]
 
-  const courseCardsContainer = document.getElementById("courseCards")
-  const totalCreditsElement = document.getElementById("totalCredits")
-  const allBtn = document.getElementById("allBtn")
-  const cseBtn = document.getElementById("cseBtn")
-  const wddBtn = document.getElementById("wddBtn")
+  const courseContainer = document.getElementById("course-container")
+  const totalCreditsElement = document.getElementById("total-credits")
+  const allBtn = document.getElementById("all-btn")
+  const cseBtn = document.getElementById("cse-btn")
+  const wddBtn = document.getElementById("wdd-btn")
 
-
-  allBtn.addEventListener("click", () => filterCourses("all"))
-  cseBtn.addEventListener("click", () => filterCourses("CSE"))
-  wddBtn.addEventListener("click", () => filterCourses("WDD"))
-
-  filterCourses("all")
-
-
-  function filterCourses(subject) {
-
-    ;[allBtn, cseBtn, wddBtn].forEach((btn) => btn.classList.remove("active"))
-
-    if (subject === "all") {
-      allBtn.classList.add("active")
-      displayCourses(courses)
-    } else if (subject === "CSE") {
-      cseBtn.classList.add("active")
-      const filteredCourses = courses.filter((course) => course.subject === "CSE")
-      displayCourses(filteredCourses)
-    } else if (subject === "WDD") {
-      wddBtn.classList.add("active")
-      const filteredCourses = courses.filter((course) => course.subject === "WDD")
-      displayCourses(filteredCourses)
-    }
-  }
-
-
+  // Function to display courses
   function displayCourses(coursesToDisplay) {
+    // Clear the container
+    courseContainer.innerHTML = ""
 
-    courseCardsContainer.innerHTML = ""
-
+    // Display each course
     coursesToDisplay.forEach((course) => {
       const courseCard = document.createElement("div")
-      courseCard.className = `course-card ${course.completed ? "completed" : "incomplete"}`
-      courseCard.setAttribute(
-        "aria-label",
-        `${course.code}: ${course.name}, ${course.completed ? "Completed" : "Not completed"}`,
-      )
-      courseCard.textContent = course.code
-
-      courseCard.title = `${course.name} (${course.credits} credits)`
-
-      courseCardsContainer.appendChild(courseCard)
+      courseCard.className = `course-card ${course.completed ? "completed" : ""}`
+      courseCard.textContent = `${course.code} - ${course.name}`
+      courseContainer.appendChild(courseCard)
     })
 
+    // Calculate and display total credits
     const totalCredits = coursesToDisplay.reduce((total, course) => total + course.credits, 0)
     totalCreditsElement.textContent = totalCredits
+  }
+
+  // Initial display of all courses
+  displayCourses(courses)
+
+  // Filter buttons event listeners
+  allBtn.addEventListener("click", () => {
+    setActiveButton(allBtn)
+    displayCourses(courses)
+  })
+
+  cseBtn.addEventListener("click", () => {
+    setActiveButton(cseBtn)
+    const cseOnly = courses.filter((course) => course.subject === "CSE")
+    displayCourses(cseOnly)
+  })
+
+  wddBtn.addEventListener("click", () => {
+    setActiveButton(wddBtn)
+    const wddOnly = courses.filter((course) => course.subject === "WDD")
+    displayCourses(wddOnly)
+  })
+
+  // Helper function to set active button
+  function setActiveButton(activeButton) {
+    // Remove active class from all buttons
+    ;[allBtn, cseBtn, wddBtn].forEach((btn) => {
+      btn.classList.remove("active")
+    })
+
+    // Add active class to the clicked button
+    activeButton.classList.add("active")
   }
 })
 
