@@ -9,8 +9,21 @@
     <!-- Open Graph Meta Tags -->
     <meta property="og:title" content="Araucania Chamber of Commerce Business Directory">
     <meta property="og:type" content="website">
-    <meta property="og:image" content="images/chamber-directory.jpg">
+    <meta property="og:image" content="https://josue-neiculeo.github.io/wdd231/chamber/images/chamber-directory.jpg">
     <meta property="og:url" content="https://josue-neiculeo.github.io/wdd231/chamber/directory.html">
+    
+    <!-- Preload critical resources -->
+    <link rel="preload" href="styles/normalize.css" as="style">
+    <link rel="preload" href="styles/base.css" as="style">
+    
+    <!-- Preload logo image -->
+    <link rel="preload" href="images/logo.png" as="image">
+    
+    <!-- Add chamber directory image optimized for social sharing -->
+    <meta property="og:image" content="https://josue-neiculeo.github.io/wdd231/chamber/images/chamber-directory.jpg">
+    <meta property="og:image:alt" content="Araucania Chamber of Commerce Business Directory - Showcasing local businesses in the beautiful Araucania region">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
     
     <title>Business Directory | Araucania Chamber of Commerce</title>
     
@@ -30,7 +43,7 @@
     <header>
         <div class="header-content">
             <div class="logo-container">
-                <img src="images/logo.png" alt="Araucania Chamber of Commerce Logo" width="60" height="60">
+                <img src="images/logo.png" alt="Araucania Chamber of Commerce Logo" width="60" height="60" loading="lazy">
                 <div class="title-container">
                     <h1>Araucania</h1>
                     <h2>Chamber of Commerce</h2>
@@ -63,10 +76,10 @@
         
         <div class="view-toggle">
             <button id="grid-btn" class="active" aria-label="Grid View">
-                <img src="images/grid.png" alt="Grid View" width="20" height="20">
+                <img src="images/grid.png" alt="Grid View" width="20" height="20" loading="lazy">
             </button>
             <button id="list-btn" aria-label="List View">
-                <img src="images/list.png" alt="List View" width="20" height="20">
+                <img src="images/list.png" alt="List View" width="20" height="20" loading="lazy">
             </button>
         </div>
         
@@ -76,7 +89,7 @@
     <footer>
         <div class="footer-top">
             <div class="footer-logo">
-                <img src="images/logo.png" alt="Araucania Chamber of Commerce Logo" width="60" height="60">
+                <img src="images/logo.png" alt="Araucania Chamber of Commerce Logo" width="60" height="60" loading="lazy">
                 <div>
                     <h3>Araucania Chamber of Commerce</h3>
                     <p>123 Main Street, Temuco, Araucania, Chile</p>

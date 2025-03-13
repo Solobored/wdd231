@@ -68,7 +68,7 @@ document.addEventListener("DOMContentLoaded", () => {
     const container = document.getElementById("directory-container")
     if (!container) return
 
-    container.innerHTML = ""
+    const fragment = document.createDocumentFragment()
 
     members.forEach((member) => {
       const memberCard = document.createElement("div")
@@ -96,16 +96,19 @@ document.addEventListener("DOMContentLoaded", () => {
       }
 
       memberCard.innerHTML = `
-                <img src="images/${member.image}" alt="${member.name} Logo" onerror="this.src='images/placeholder.png'">
-                <h2>${member.name}</h2>
-                <p>${member.address}</p>
-                <p>${member.phone}</p>
-                <p><a href="${member.website}" target="_blank">Website</a></p>
-                <p class="member-level ${levelClass}">${levelText}</p>
-            `
+                  <img data-src="images/${member.image}" alt="${member.name} Logo" onerror="this.src='images/placeholder.png'">
+                  <h2>${member.name}</h2>
+                  <p>${member.address}</p>
+                  <p>${member.phone}</p>
+                  <p><a href="${member.website}" target="_blank">Website</a></p>
+                  <p class="member-level ${levelClass}">${levelText}</p>
+              `
 
-      container.appendChild(memberCard)
+      fragment.appendChild(memberCard)
     })
+
+    container.innerHTML = ""
+    container.appendChild(fragment)
   }
 
   // Load members when page loads
@@ -114,5 +117,26 @@ document.addEventListener("DOMContentLoaded", () => {
   // Footer date
   document.getElementById("current-year").textContent = new Date().getFullYear()
   document.getElementById("last-modified").textContent = `Last Modified: ${document.lastModified}`
+
+  // Add intersection observer for lazy loading
+  const lazyLoadImages = () => {
+    const imageObserver = new IntersectionObserver((entries, observer) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          const img = entry.target
+          img.src = img.dataset.src
+          img.removeAttribute("data-src")
+          observer.unobserve(img)
+        }
+      })
+    })
+
+    document.querySelectorAll("img[data-src]").forEach((img) => {
+      imageObserver.observe(img)
+    })
+  }
+
+  // Initialize lazy loading
+  lazyLoadImages()
 })
 
