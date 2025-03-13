@@ -1,6 +1,5 @@
 /* Large Screen Styles */
 @media screen and (min-width: 1024px) {
-  /* Header Adjustments */
   .header-content {
     padding: 1rem 2rem;
   }
@@ -21,7 +20,6 @@
     display: none;
   }
 
-  /* Navigation */
   nav ul {
     display: flex;
     justify-content: space-around;
@@ -33,22 +31,18 @@
     text-align: center;
   }
 
-  /* Directory Grid */
   #directory-container.grid {
     grid-template-columns: repeat(3, 1fr);
   }
 
-  /* List View Adjustments */
   .list .member-card {
     grid-template-columns: 1fr 1fr 1fr 1fr;
   }
 
-  /* Main Content */
   main {
     padding: 2rem;
   }
 
-  /* Footer */
   footer {
     padding: 2rem;
   }

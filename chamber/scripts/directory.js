@@ -1,6 +1,4 @@
-// Directory Page JavaScript
 document.addEventListener("DOMContentLoaded", () => {
-  // Navigation Toggle
   const hamburgerBtn = document.getElementById("hamburger-btn")
   const primaryNav = document.getElementById("primary-nav")
 
@@ -12,7 +10,6 @@ document.addEventListener("DOMContentLoaded", () => {
     })
   }
 
-  // Current Date
   const currentDateElement = document.getElementById("current-date")
   if (currentDateElement) {
     const options = {
@@ -24,7 +21,6 @@ document.addEventListener("DOMContentLoaded", () => {
     currentDateElement.textContent = new Date().toLocaleDateString("en-US", options)
   }
 
-  // Directory View Toggle
   const gridBtn = document.getElementById("grid-btn")
   const listBtn = document.getElementById("list-btn")
   const directoryContainer = document.getElementById("directory-container")
@@ -45,7 +41,6 @@ document.addEventListener("DOMContentLoaded", () => {
     })
   }
 
-  // Fetch and display members
   async function loadMembers() {
     try {
       const response = await fetch("data/members.json")
@@ -63,7 +58,6 @@ document.addEventListener("DOMContentLoaded", () => {
     }
   }
 
-  // Display members
   function displayMembers(members) {
     const container = document.getElementById("directory-container")
     if (!container) return
@@ -108,10 +102,8 @@ document.addEventListener("DOMContentLoaded", () => {
     })
   }
 
-  // Load members when page loads
   loadMembers()
 
-  // Footer date
   document.getElementById("current-year").textContent = new Date().getFullYear()
   document.getElementById("last-modified").textContent = `Last Modified: ${document.lastModified}`
 })

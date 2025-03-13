@@ -1,15 +1,14 @@
-/* Base Styles for Small Screens */
 :root {
-  --primary-color: #2c5f2d;
-  --secondary-color: #97bc62;
-  --accent-color: #ffcb47;
-  --dark-color: #1e3f20;
-  --light-color: #f5f5f5;
-  --white: #ffffff;
-  --black: #333333;
+  --primary-color: #103820; /* Improved contrast */
+  --secondary-color: #557A46; /* Darker shade for better readability */
+  --accent-color: #FFFFFF; /* Higher contrast yellow/gold */
+  --dark-color: #0D2615; /* Even darker for text clarity */
+  --light-color: #FAFAFA; /* Soft light background */
+  --white: #FFFFFF;
+  --black: #1A1A1A; /* Darker black for contrast */
   --font-heading: "Montserrat", sans-serif;
   --font-body: "Open Sans", sans-serif;
-  --shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  --shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
 }
 
 * {
@@ -25,7 +24,6 @@ body {
   margin: 0 auto;
 }
 
-/* Header Styles */
 header {
   background-color: var(--white);
   box-shadow: var(--shadow);
@@ -37,6 +35,7 @@ header {
   align-items: center;
   padding: 1rem;
   position: relative;
+  color: var(--white);
 }
 
 .logo-container {
@@ -54,7 +53,7 @@ header {
   font-family: var(--font-heading);
   font-size: 1.2rem;
   margin: 0;
-  color: var(--primary-color);
+  color: var(--secondary-color );
 }
 
 .title-container h2 {
@@ -83,7 +82,6 @@ header {
   padding: 0.5rem;
 }
 
-/* Navigation Styles */
 nav {
   background-color: var(--primary-color);
 }
@@ -114,6 +112,7 @@ nav a {
 
 nav a:hover {
   background-color: var(--secondary-color);
+  color: var(--black);
 }
 
 nav li.active a {
@@ -128,7 +127,6 @@ nav li.active a {
   font-weight: 600;
 }
 
-/* Main Content Styles */
 main {
   padding: 1rem;
 }
@@ -140,7 +138,26 @@ main h1 {
   margin-bottom: 1.5rem;
 }
 
-/* Directory Specific Styles */
+button, .btn {
+  background-color: var(--primary-color);
+  color: var(--white);
+  padding: 12px 18px;
+  border: none;
+  font-weight: bold;
+  cursor: pointer;
+  border-radius: 5px;
+  font-size: 1rem;
+}
+
+button:hover, .btn:hover {
+  background-color: var(--dark-color);
+}
+
+.text-on-light {
+  color: #0A0A0A; 
+  font-weight: 600;
+}
+
 .directory-main {
   max-width: 1200px;
   margin: 0 auto;
@@ -171,7 +188,6 @@ main h1 {
   height: 20px;
 }
 
-/* Grid View */
 #directory-container.grid {
   display: grid;
   grid-template-columns: 1fr;
@@ -225,15 +241,6 @@ main h1 {
   color: var(--black);
 }
 
-.level-2 {
-  color: #808080; /* Silver */
-}
-
-.level-3 {
-  color: #daa520; /* Gold */
-}
-
-/* List View */
 #directory-container.list {
   display: flex;
   flex-direction: column;
@@ -256,7 +263,6 @@ main h1 {
   font-size: 1rem;
 }
 
-/* Footer Styles */
 footer {
   background-color: var(--primary-color);
   color: var(--white);
@@ -301,10 +307,12 @@ footer {
 .footer-contact a {
   color: var(--accent-color);
   text-decoration: none;
+  font-weight: bold;
 }
 
 .footer-contact a:hover {
   text-decoration: underline;
+  color: var(--secondary-color);
 }
 
 .footer-bottom {
