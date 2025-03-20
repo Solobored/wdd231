@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Araucania Chamber of Commerce</title>
+    <meta name="description" content="Home page for the Araucania Chamber of Commerce - Supporting local businesses and community growth">
+    <link rel="icon" href="images/favicon.ico">
+    <link rel="stylesheet" href="styles/normalize.css">
+    <link rel="stylesheet" href="styles/base.css">
+    <link rel="stylesheet" href="styles/medium.css">
+    <link rel="stylesheet" href="styles/large.css">
+    <script src="scripts/date.js" defer></script>
+    <script src="scripts/weather.js" defer></script>
+    <script src="scripts/spotlight.js" defer></script>
+</head>
+<body>
+    <header>
+        <div class="header-content">
+            <a href="index.html" class="logo-container">
+                <img src="images/logo.webp" alt="Araucania Chamber of Commerce Logo" class="logo">
+                <div class="title-container">
+                    <h1>Araucania</h1>
+                    <p>Chamber of Commerce</p>
+                </div>
+            </a>
+            <div class="social-icons">
+                <a href="https://facebook.com" target="_blank" aria-label="Visit our Facebook page">
+                    <img src="images/facebook.webp" alt="Facebook" class="social-icon">
+                </a>
+                <a href="https://linkedin.com" target="_blank" aria-label="Visit our LinkedIn page">
+                    <img src="images/linkedin.webp" alt="LinkedIn" class="social-icon">
+                </a>
+            </div>
+        </div>
+        <nav>
+            <ul>
+                <li><a href="index.html" class="active">Home</a></li>
+                <li><a href="discover.html">Discover</a></li>
+                <li><a href="directory.html">Directory</a></li>
+                <li><a href="join.html">Join</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+        </nav>
+        <div class="date-banner">
+            <p id="current-date">Monday, March 17, 2025</p>
+        </div>
+    </header>
+    
+    <main class="home-main">
+        <div class="hero-container">
+            <img src="images/araucaria.jpg" alt="Araucania landscape" class="hero-image">
+            <div class="call-to-action">
+                <a href="join.html" class="cta-button">Join the Chamber</a>
+            </div>
+        </div>
+        
+        <section class="events-section">
+            <h2>Current Events</h2>
+            <div class="event-content">
+                <h3>Business Networking Breakfast</h3>
+                <p>Join us on May 15th at 8:00 AM for our monthly networking breakfast at the Grand Hotel in Temuco. Meet local business owners and expand your professional network.</p>
+                
+                <h3>Annual Trade Show</h3>
+                <p>Mark your calendars for our Annual Trade Show on June 10-12. Showcase your products and services to the community. Registration is now open!</p>
+                
+                <h3>Small Business Workshop</h3>
+                <p>Learn essential skills for growing your small business at our workshop on May 22nd. Topics include digital marketing, financial planning, and customer retention strategies.</p>
+            </div>
+        </section>
+        
+        <section class="weather-section">
+            <h2>Current Weather</h2>
+            <div class="weather-content">
+                <div class="weather-icon-temp">
+                    <img id="weather-icon" src="images/weather-icon.webp" alt="Weather icon">
+                    <p><span id="current-temp">--</span>°F</p>
+                </div>
+                <p id="weather-desc">Loading weather data...</p>
+                <p>High: <span id="high-temp">--</span>°</p>
+                <p>Low: <span id="low-temp">--</span>°</p>
+                <p>Humidity: <span id="humidity">--</span>%</p>
+            </div>
+        </section>
+        
+        <section class="forecast-section">
+            <h2>Weather Forecast</h2>
+            <div class="forecast-content">
+                <div id="forecast-container">
+                    <p>Loading forecast data...</p>
+                </div>
+            </div>
+        </section>
+        
+        <section class="spotlight-section">
+            <h2>Business Spotlights</h2>
+            <div class="spotlight-container">
+                <p>Loading business spotlights...</p>
+            </div>
+        </section>
+    </main>
+    
+    <footer>
+        <div class="footer-content">
+            <div class="footer-info">
+                <img src="images/logo.webp" alt="Araucania Chamber of Commerce Logo" class="footer-logo">
+                <div>
+                    <h3>Araucania Chamber of Commerce</h3>
+                    <p>123 Main Street, Temuco, Araucania, Chile</p>
+                </div>
+            </div>
+            <div class="footer-contact">
+                <p>info@araucaniachamber.org</p>
+                <p>+56 45 123 4567</p>
+                <p><a href="#" class="location-map">Location Map</a></p>
+            </div>
+        </div>
+        <div class="footer-base">
+          <p>© <span id="current-year">2025</span> Araucania Chamber of Commerce | Josue Neiculeo | WDD 231</p>
+          <p id="last-updated">Last Updated: 03/17/2025 14:30:45</p>
+        </div>
+    </footer>
+</body>
+</html>
+

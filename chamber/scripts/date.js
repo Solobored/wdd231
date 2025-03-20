@@ -1,6 +1,4 @@
-
 document.addEventListener("DOMContentLoaded", () => {
-
   const currentDateElement = document.getElementById("current-date")
   if (currentDateElement) {
     const options = {
@@ -13,13 +11,11 @@ document.addEventListener("DOMContentLoaded", () => {
     currentDateElement.textContent = formattedDate
   }
 
-
   const currentYearElement = document.getElementById("current-year")
   if (currentYearElement) {
     const currentYear = new Date().getFullYear()
     currentYearElement.textContent = currentYear
   }
-
 
   const lastUpdatedElement = document.getElementById("last-updated")
   if (lastUpdatedElement) {

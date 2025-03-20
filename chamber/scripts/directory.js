@@ -1,110 +1,77 @@
+
 document.addEventListener("DOMContentLoaded", () => {
-  const hamburgerBtn = document.getElementById("hamburger-btn")
-  const primaryNav = document.getElementById("primary-nav")
-
-  if (hamburgerBtn && primaryNav) {
-    hamburgerBtn.addEventListener("click", () => {
-      primaryNav.classList.toggle("open")
-      hamburgerBtn.textContent = primaryNav.classList.contains("open") ? "✕" : "☰"
-      hamburgerBtn.setAttribute("aria-expanded", primaryNav.classList.contains("open") ? "true" : "false")
-    })
-  }
-
-  const currentDateElement = document.getElementById("current-date")
-  if (currentDateElement) {
-    const options = {
-      weekday: "long",
-      year: "numeric",
-      month: "long",
-      day: "numeric",
-    }
-    currentDateElement.textContent = new Date().toLocaleDateString("en-US", options)
-  }
-
-  const gridBtn = document.getElementById("grid-btn")
-  const listBtn = document.getElementById("list-btn")
-  const directoryContainer = document.getElementById("directory-container")
-
-  if (gridBtn && listBtn && directoryContainer) {
-    gridBtn.addEventListener("click", () => {
-      directoryContainer.classList.add("grid")
-      directoryContainer.classList.remove("list")
-      gridBtn.classList.add("active")
-      listBtn.classList.remove("active")
-    })
-
-    listBtn.addEventListener("click", () => {
-      directoryContainer.classList.add("list")
-      directoryContainer.classList.remove("grid")
-      listBtn.classList.add("active")
-      gridBtn.classList.remove("active")
-    })
-  }
-
-  async function loadMembers() {
-    try {
-      const response = await fetch("data/members.json")
+  fetch("data/members.json")
+    .then((response) => {
       if (!response.ok) {
-        throw new Error("Failed to fetch member data")
+        throw new Error("Network response was not ok")
       }
-      const data = await response.json()
-      displayMembers(data.members)
-    } catch (error) {
-      console.error("Error loading members:", error)
-      const container = document.getElementById("directory-container")
-      if (container) {
-        container.innerHTML = "<p>Error loading member data. Please try again later.</p>"
-      }
-    }
-  }
+      return response.json()
+    })
+    .then((data) => {
+      displayMembers(data)
+      setupViewToggle()
+    })
+    .catch((error) => {
+      console.error("Error fetching data:", error)
+      displayError()
+    })
 
   function displayMembers(members) {
     const container = document.getElementById("directory-container")
-    if (!container) return
 
-    container.innerHTML = ""
+    if (container) {
+      container.innerHTML = ""
 
-    members.forEach((member) => {
-      const memberCard = document.createElement("div")
-      memberCard.className = "member-card"
+      members.forEach((member) => {
+        const card = document.createElement("div")
+        card.classList.add("directory-card")
 
-      let levelText = ""
-      let levelClass = ""
+        const membershipLevel = member.membershipLevel.charAt(0).toUpperCase() + member.membershipLevel.slice(1)
 
-      switch (member.membershipLevel) {
-        case 1:
-          levelText = "Member"
-          levelClass = "level-1"
-          break
-        case 2:
-          levelText = "Silver Member"
-          levelClass = "level-2"
-          break
-        case 3:
-          levelText = "Gold Member"
-          levelClass = "level-3"
-          break
-        default:
-          levelText = "Member"
-          levelClass = "level-1"
-      }
+        card.innerHTML = `
+        <img src="${member.image}" alt="${member.name} logo" class="member-image">
+        <h2>${member.name}</h2>
+        <p>${member.address}</p>
+        <p>${member.phone}</p>
+        <p><a href="${member.website}" target="_blank">Website</a></p>
+        <p class="membership-badge">${membershipLevel} Member</p>
+      `
 
-      memberCard.innerHTML = `
-                <img src="images/${member.image}" alt="${member.name} Logo" onerror="this.src='images/placeholder.png'">
-                <h2>${member.name}</h2>
-                <p>${member.address}</p>
-                <p>${member.phone}</p>
-                <p><a href="${member.website}" target="_blank">Website</a></p>
-                <p class="member-level ${levelClass}">${levelText}</p>
-            `
-
-      container.appendChild(memberCard)
-    })
+        container.appendChild(card)
+      })
+    }
   }
 
-  loadMembers()
+  function displayError() {
+    const container = document.getElementById("directory-container")
+    if (container) {
+      container.innerHTML = '<p class="error-message">Unable to load directory data. Please try again later.</p>'
+    }
+  }
 
-  document.getElementById("current-year").textContent = new Date().getFullYear()
-  document.getElementById("last-modified").textContent = `Last Modified: ${document.lastModified}`
+  function setupViewToggle() {
+    const gridBtn = document.getElementById("grid-btn")
+    const listBtn = document.getElementById("list-btn")
+    const directoryContainer = document.getElementById("directory-container")
+
+    if (gridBtn && listBtn && directoryContainer) {
+      directoryContainer.classList.add("grid-view")
+      directoryContainer.classList.remove("list-view")
+
+      gridBtn.addEventListener("click", () => {
+        directoryContainer.classList.add("grid-view")
+        directoryContainer.classList.remove("list-view")
+        gridBtn.setAttribute("aria-pressed", "true")
+        listBtn.setAttribute("aria-pressed", "false")
+      })
+
+      listBtn.addEventListener("click", () => {
+        directoryContainer.classList.add("list-view")
+        directoryContainer.classList.remove("grid-view")
+        listBtn.setAttribute("aria-pressed", "true")
+        gridBtn.setAttribute("aria-pressed", "false")
+      })
+    }
+  }
 })
 

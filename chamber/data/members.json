@@ -1,68 +1,80 @@
-{
-  "members": [
-    {
-      "name": "Araucania Eco Tours",
-      "address": "123 Lautaro St, Temuco, Araucania",
-      "phone": "+56 45 222 3344",
-      "website": "https://araucaniaecotours.cl",
-      "image": "eco-tours.webp",
-      "membershipLevel": 3,
-      "description": "Sustainable tourism experiences in the Araucania region"
-    },
-    {
-      "name": "Mapuche Crafts Cooperative",
-      "address": "456 Caupolican Ave, Villarrica, Araucania",
-      "phone": "+56 45 233 4455",
-      "website": "https://mapuchecrafts.cl",
-      "image": "mapuche-crafts.webp",
-      "membershipLevel": 2,
-      "description": "Traditional Mapuche textiles and crafts"
-    },
-    {
-      "name": "Araucania Tech Solutions",
-      "address": "789 Digital Blvd, Temuco, Araucania",
-      "phone": "+56 45 244 5566",
-      "website": "https://araucaniatech.cl",
-      "image": "tech-solutions.webp",
-      "membershipLevel": 3,
-      "description": "IT services and digital transformation"
-    },
-    {
-      "name": "Southern Chile Lumber",
-      "address": "101 Forest Road, Angol, Araucania",
-      "phone": "+56 45 255 6677",
-      "website": "https://sclumber.cl",
-      "image": "lumber.webp",
-      "membershipLevel": 2,
-      "description": "Sustainable forestry and wood products"
-    },
-    {
-      "name": "Araucania Fresh Produce",
-      "address": "202 Market St, Temuco, Araucania",
-      "phone": "+56 45 266 7788",
-      "website": "https://araucaniafresh.cl",
-      "image": "fresh-produce.webp",
-      "membershipLevel": 1,
-      "description": "Local fruits, vegetables, and agricultural products"
-    },
-    {
-      "name": "Volcano View Hotel",
-      "address": "303 Villarrica View, Pucon, Araucania",
-      "phone": "+56 45 277 8899",
-      "website": "https://volcanoviewhotel.cl",
-      "image": "hotel.webp",
-      "membershipLevel": 3,
-      "description": "Luxury accommodations with views of Villarrica Volcano"
-    },
-    {
-      "name": "Araucania Legal Services",
-      "address": "404 Justice Ave, Temuco, Araucania",
-      "phone": "+56 45 288 9900",
-      "website": "https://araucanialegal.cl",
-      "image": "legal-services.webp",
-      "membershipLevel": 1,
-      "description": "Legal consultation and services"
-    }
-  ]
-}
+[
+  {
+    "id": 1,
+    "name": "Araucania Eco Tours",
+    "address": "123 Lautaro St, Temuco, Araucania",
+    "phone": "+56 45 222 3344",
+    "website": "https://www.araucaniaecotours.cl",
+    "image": "images/eco-tours.webp",
+    "email": "info@araucaniaecotours.cl",
+    "tagline": "Explore the Natural Beauty of Araucania",
+    "membershipLevel": "gold"
+  },
+  {
+    "id": 2,
+    "name": "Mapuche Crafts Cooperative",
+    "address": "456 Caupolican Ave, Villarrica, Araucania",
+    "phone": "+56 45 233 4455",
+    "website": "https://www.mapuchecrafts.cl",
+    "image": "images/mapuche-crafts.webp",
+    "email": "contact@mapuchecrafts.cl",
+    "tagline": "Authentic Indigenous Artisanry",
+    "membershipLevel": "silver"
+  },
+  {
+    "id": 3,
+    "name": "Araucania Tech Solutions",
+    "address": "789 Digital Blvd, Temuco, Araucania",
+    "phone": "+56 45 244 5566",
+    "website": "https://www.araucaniatech.cl",
+    "image": "images/tech-solutions.webp",
+    "email": "support@araucaniatech.cl",
+    "tagline": "Innovative Technology for Southern Chile",
+    "membershipLevel": "gold"
+  },
+  {
+    "id": 4,
+    "name": "Southern Chile Lumber",
+    "address": "101 Forest Road, Angol, Araucania",
+    "phone": "+56 45 255 6677",
+    "website": "https://www.southernchilelumber.cl",
+    "image": "images/lumber.webp",
+    "email": "info@southernchilelumber.cl",
+    "tagline": "Sustainable Forestry Products",
+    "membershipLevel": "silver"
+  },
+  {
+    "id": 5,
+    "name": "Araucania Fresh Produce",
+    "address": "202 Market St, Temuco, Araucania",
+    "phone": "+56 45 266 7788",
+    "website": "https://www.araucaniafresh.cl",
+    "image": "images/fresh-produce.webp",
+    "email": "orders@araucaniafresh.cl",
+    "tagline": "Farm to Table Freshness",
+    "membershipLevel": "bronze"
+  },
+  {
+    "id": 6,
+    "name": "Volcano View Hotel",
+    "address": "303 Villarrica View, Pucon, Araucania",
+    "phone": "+56 45 277 8899",
+    "website": "https://www.volcanoviewhotel.cl",
+    "image": "images/hotel.webp",
+    "email": "reservations@volcanoviewhotel.cl",
+    "tagline": "Luxury with a View",
+    "membershipLevel": "gold"
+  },
+  {
+    "id": 7,
+    "name": "Araucania Legal Services",
+    "address": "404 Justice Ave, Temuco, Araucania",
+    "phone": "+56 45 288 9900",
+    "website": "https://www.araucanialegal.cl",
+    "image": "images/legal-services.webp",
+    "email": "consult@araucanialegal.cl",
+    "tagline": "Professional Legal Expertise",
+    "membershipLevel": "silver"
+  }
+]
 
