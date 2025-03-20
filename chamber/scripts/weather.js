@@ -1,12 +1,46 @@
 
 document.addEventListener("DOMContentLoaded", () => {
+  const apiKey = "99910b55ff0c7772d51668a952037613" 
+  const city = "Temuco"
+  const countryCode = "CL"
 
-  displayRandomWeather()
-  displayRandomForecast()
+  async function fetchCurrentWeather() {
+    try {
+      const response = await fetch(
+        `https://api.openweathermap.org/data/2.5/weather?q=${city},${countryCode}&units=imperial&appid=${apiKey}`,
+      )
 
+      if (!response.ok) {
+        throw new Error("Weather data not available")
+      }
 
-  function displayRandomWeather() {
+      const data = await response.json()
+      displayCurrentWeather(data)
+    } catch (error) {
+      console.error("Error fetching current weather:", error)
+      displayWeatherError()
+    }
+  }
 
+  async function fetchForecast() {
+    try {
+      const response = await fetch(
+        `https://api.openweathermap.org/data/2.5/forecast?q=${city},${countryCode}&units=imperial&appid=${apiKey}`,
+      )
+
+      if (!response.ok) {
+        throw new Error("Forecast data not available")
+      }
+
+      const data = await response.json()
+      displayForecast(data)
+    } catch (error) {
+      console.error("Error fetching forecast:", error)
+      displayForecastError()
+    }
+  }
+
+  function displayCurrentWeather(data) {
     const currentTemp = document.getElementById("current-temp")
     const weatherIcon = document.getElementById("weather-icon")
     const weatherDesc = document.getElementById("weather-desc")
@@ -14,91 +48,91 @@ document.addEventListener("DOMContentLoaded", () => {
     const lowTemp = document.getElementById("low-temp")
     const humidity = document.getElementById("humidity")
 
+    currentTemp.textContent = Math.round(data.main.temp)
 
-    const weatherConditions = [
-      { description: "Clear Sky", icon: "01d" },
-      { description: "Few Clouds", icon: "02d" },
-      { description: "Scattered Clouds", icon: "03d" },
-      { description: "Broken Clouds", icon: "04d" },
-      { description: "Light Rain", icon: "10d" },
-      { description: "Moderate Rain", icon: "09d" },
-      { description: "Thunderstorm", icon: "11d" },
-      { description: "Mist", icon: "50d" },
-    ]
+    const descriptions = data.weather.map((item) => {
+      return item.description
+        .split(" ")
+        .map((word) => word.charAt(0).toUpperCase() + word.slice(1))
+        .join(" ")
+    })
 
-    const month = new Date().getMonth() // 0-11 (Jan-Dec)
+    weatherDesc.textContent = descriptions.join(", ")
 
-    let tempRange
-    if (month >= 11 || month <= 1) {
+    const iconCode = data.weather[0].icon
+    weatherIcon.src = `https://openweathermap.org/img/wn/${iconCode}@2x.png`
+    weatherIcon.alt = data.weather[0].description
 
-      tempRange = { min: 55, max: 85 }
-    } else if (month >= 2 && month <= 4) {
+    highTemp.textContent = Math.round(data.main.temp_max)
+    lowTemp.textContent = Math.round(data.main.temp_min)
+    humidity.textContent = data.main.humidity
 
-      tempRange = { min: 45, max: 75 }
-    } else if (month >= 5 && month <= 7) {
-
-      tempRange = { min: 35, max: 60 }
-    } else {
-
-      tempRange = { min: 45, max: 70 }
-    }
-
-    const temp = Math.floor(Math.random() * (tempRange.max - tempRange.min + 1)) + tempRange.min
-    const high = temp + Math.floor(Math.random() * 8) + 2 
-    const low = temp - Math.floor(Math.random() * 8) - 2 
-    const humidityValue = Math.floor(Math.random() * 30) + 50 
-    const weatherCondition = weatherConditions[Math.floor(Math.random() * weatherConditions.length)]
-
-    currentTemp.textContent = temp
-    weatherIcon.src = `https://openweathermap.org/img/wn/${weatherCondition.icon}@2x.png`
-    weatherIcon.alt = weatherCondition.description
-    weatherDesc.textContent = weatherCondition.description
-    highTemp.textContent = high
-    lowTemp.textContent = low
-    humidity.textContent = humidityValue
+    console.log("Current weather data loaded successfully")
   }
 
-    function displayRandomForecast() {
+  function displayForecast(data) {
     const forecastContainer = document.getElementById("forecast-container")
     forecastContainer.innerHTML = ""
 
-    const today = new Date()
+    const today = new Date().setHours(0, 0, 0, 0)
+    const forecasts = []
     const daysOfWeek = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"]
 
-    const weatherConditions = [
-      { description: "Clear Sky", icon: "01d" },
-      { description: "Few Clouds", icon: "02d" },
-      { description: "Scattered Clouds", icon: "03d" },
-      { description: "Broken Clouds", icon: "04d" },
-      { description: "Light Rain", icon: "10d" },
-      { description: "Moderate Rain", icon: "09d" },
-      { description: "Thunderstorm", icon: "11d" },
-      { description: "Mist", icon: "50d" },
-    ]
+    const forecastsByDay = {}
 
+    data.list.forEach((item) => {
+      const forecastDate = new Date(item.dt * 1000)
+      const forecastDay = forecastDate.getDate()
+      const forecastMonth = forecastDate.getMonth()
+      const forecastYear = forecastDate.getFullYear()
 
-    const month = today.getMonth() 
+      const dayKey = `${forecastYear}-${forecastMonth}-${forecastDay}`
 
-    let tempRange
-    if (month >= 11 || month <= 1) {
-      tempRange = { min: 55, max: 85 }
-    } else if (month >= 2 && month <= 4) {
-      tempRange = { min: 45, max: 75 }
-    } else if (month >= 5 && month <= 7) {
-      tempRange = { min: 35, max: 60 }
-    } else {
-      tempRange = { min: 45, max: 70 }
-    }
+      const itemDay = new Date(forecastYear, forecastMonth, forecastDay).getTime()
+      if (itemDay <= today) {
+        return
+      }
 
-    for (let i = 1; i <= 3; i++) {
-      const forecastDate = new Date()
-      forecastDate.setDate(today.getDate() + i)
+      if (!forecastsByDay[dayKey]) {
+        forecastsByDay[dayKey] = []
+      }
 
+      forecastsByDay[dayKey].push(item)
+    })
+
+    const days = Object.keys(forecastsByDay).sort()
+
+    const threeDays = days.slice(0, 3)
+
+    threeDays.forEach((day) => {
+      const dayForecasts = forecastsByDay[day]
+
+      let closestToNoon = dayForecasts[0]
+      let minDiff = Number.POSITIVE_INFINITY
+
+      dayForecasts.forEach((forecast) => {
+        const forecastDate = new Date(forecast.dt * 1000)
+        const hours = forecastDate.getHours()
+        const diff = Math.abs(hours - 12)
+
+        if (diff < minDiff) {
+          minDiff = diff
+          closestToNoon = forecast
+        }
+      })
+
+      forecasts.push(closestToNoon)
+    })
+
+    forecasts.forEach((forecast) => {
+      const forecastDate = new Date(forecast.dt * 1000)
       const dayOfWeek = daysOfWeek[forecastDate.getDay()]
-
-      const temp = Math.floor(Math.random() * (tempRange.max - tempRange.min + 1)) + tempRange.min
-
-      const weatherCondition = weatherConditions[Math.floor(Math.random() * weatherConditions.length)]
+      const temp = Math.round(forecast.main.temp)
+      const iconCode = forecast.weather[0].icon
+      const description = forecast.weather[0].description
+        .split(" ")
+        .map((word) => word.charAt(0).toUpperCase() + word.slice(1))
+        .join(" ")
 
       const forecastDay = document.createElement("div")
       forecastDay.classList.add("forecast-day")
@@ -106,13 +140,29 @@ document.addEventListener("DOMContentLoaded", () => {
       forecastDay.innerHTML = `
         <h3>${dayOfWeek}</h3>
         <div class="weather-icon-temp">
-          <img src="https://openweathermap.org/img/wn/${weatherCondition.icon}.png" alt="${weatherCondition.description}">
+          <img src="https://openweathermap.org/img/wn/${iconCode}.png" alt="${description}">
           <p>${temp}°F</p>
         </div>
-        <p>${weatherCondition.description}</p>
+        <p>${description}</p>
       `
 
       forecastContainer.appendChild(forecastDay)
+    })
+
+    console.log("Forecast data loaded successfully")
+  }
+
+  function displayWeatherError() {
+    const weatherContent = document.querySelector(".weather-content")
+    if (weatherContent) {
+      weatherContent.innerHTML = "<p>Weather data is currently unavailable. Please try again later.</p>"
+    }
+  }
+
+  function displayForecastError() {
+    const forecastContainer = document.getElementById("forecast-container")
+    if (forecastContainer) {
+      forecastContainer.innerHTML = "<p>Forecast data is currently unavailable. Please try again later.</p>"
     }
   }
 
@@ -130,11 +180,14 @@ document.addEventListener("DOMContentLoaded", () => {
     refreshButton.style.cursor = "pointer"
 
     refreshButton.addEventListener("click", () => {
-      displayRandomWeather()
-      displayRandomForecast()
+      fetchCurrentWeather()
+      fetchForecast()
     })
 
     weatherSection.appendChild(refreshButton)
   }
+
+  fetchCurrentWeather()
+  fetchForecast()
 })
 
