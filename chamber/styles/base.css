@@ -1,4 +1,4 @@
-/* Base styles for Araucania Chamber of Commerce */
+
 * {
   margin: 0;
   padding: 0;
@@ -24,7 +24,6 @@ body {
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 }
 
-/* Header Styles */
 header {
   background-color: white;
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
@@ -71,7 +70,6 @@ header {
   height: 30px;
 }
 
-/* Hamburger Menu */
 .hamburger {
   display: block;
   background: none;
@@ -86,7 +84,6 @@ header {
   color: var(--secondary-color);
 }
 
-/* Navigation */
 nav {
   background-color: var(--primary-color);
   width: 100%;
@@ -98,7 +95,6 @@ nav ul {
   margin: 0;
 }
 
-/* For mobile: Hide the menu by default and show when .show class is added */
 @media screen and (max-width: 767px) {
   nav ul {
     display: none;
@@ -114,7 +110,6 @@ nav ul {
   }
 }
 
-/* For desktop: Always show the menu and hide hamburger */
 @media screen and (min-width: 768px) {
   nav ul {
     display: flex;
@@ -145,7 +140,6 @@ nav a.active {
   background-color: var(--secondary-color);
 }
 
-/* Date Banner */
 .date-banner {
   background-color: white;
   padding: 0.5rem;
@@ -153,7 +147,6 @@ nav a.active {
   border-bottom: 1px solid var(--border-color);
 }
 
-/* Main Content */
 .directory-main,
 .join-main,
 .thankyou-main {
@@ -167,7 +160,6 @@ nav a.active {
   color: var(--text-color);
 }
 
-/* Join Page Styles */
 .form-intro {
   margin-bottom: 1.5rem;
 }
@@ -221,7 +213,6 @@ textarea {
   background-color: var(--secondary-color);
 }
 
-/* Membership Cards */
 .membership-levels h2 {
   margin: 2rem 0 1rem;
   text-align: center;
@@ -296,7 +287,6 @@ textarea {
   background-color: var(--secondary-color);
 }
 
-/* Modal Styles */
 .modal {
   display: none;
   position: fixed;
@@ -339,7 +329,6 @@ textarea {
   margin-bottom: 0.5rem;
 }
 
-/* Thank You Page Styles */
 .thankyou-section {
   max-width: 800px;
   margin: 0 auto;
@@ -388,7 +377,6 @@ textarea {
   background-color: var(--secondary-color);
 }
 
-/* View Buttons */
 .view-buttons {
   display: flex;
   justify-content: flex-end;
@@ -413,26 +401,22 @@ textarea {
   height: 20px;
 }
 
-/* Directory Container */
 #directory-container {
   margin-top: 1rem;
 }
 
-/* Grid View */
 .grid-view {
   display: grid;
   grid-template-columns: 1fr;
   gap: 1rem;
 }
 
-/* List View */
 .list-view {
   display: flex;
   flex-direction: column;
   gap: 0.5rem;
 }
 
-/* Directory Card */
 .directory-card {
   border: 1px solid var(--border-color);
   border-radius: 5px;
@@ -508,7 +492,6 @@ textarea {
   grid-column: 3;
 }
 
-/* Footer Styles */
 footer {
   background-color: #f5f5f5;
   border-top: 1px solid var(--border-color);
@@ -558,7 +541,6 @@ footer {
   gap: 0.5rem;
 }
 
-/* Home Page Styles */
 .hero-container {
   position: relative;
   margin-bottom: 2rem;
@@ -591,7 +573,6 @@ footer {
   background-color: var(--secondary-color);
 }
 
-/* Section Styles */
 .events-section,
 .weather-section,
 .forecast-section,
@@ -641,7 +622,6 @@ footer {
   margin-bottom: 1rem;
 }
 
-/* Weather Styles */
 .weather-icon-temp {
   display: flex;
   align-items: center;
@@ -659,7 +639,6 @@ footer {
   font-weight: bold;
 }
 
-/* Forecast Styles */
 .forecast-day {
   margin-bottom: 1rem;
   padding-bottom: 0.5rem;
@@ -672,7 +651,6 @@ footer {
   border-bottom: none;
 }
 
-/* Spotlight Styles */
 .spotlight-container {
   display: flex;
   flex-direction: column;
@@ -718,7 +696,6 @@ footer {
   font-size: 0.8rem;
 }
 
-/* Skip to content link for accessibility */
 .skip-link {
   position: absolute;
   top: -40px;
@@ -734,7 +711,6 @@ footer {
   top: 0;
 }
 
-/* Current page indicator for wayfinding */
 nav a.active::after {
   content: "";
   display: block;
