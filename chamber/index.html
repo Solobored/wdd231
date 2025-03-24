@@ -1,14 +1,14 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en-US">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Araucania Chamber of Commerce</title>
-    <meta name="description" content="Home page for the Araucania Chamber of Commerce - Supporting local businesses and community growth">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0">
+    <title>Araucania Chamber of Commerce - Home</title>
+    <meta name="description" content="Home page for the Araucania Chamber of Commerce - Supporting local businesses and community growth in the Araucania region of Chile">
     <meta name="author" content="Josue Neiculeo">
-    <meta property="og:title" content="Araucania Chamber of Commerce Business Directory">
+    <meta property="og:title" content="Araucania Chamber of Commerce">
     <meta property="og:type" content="website">
-    <meta property="og:image" content="https://solobored.github.io/wdd231/chamber/images/chamber-directory.jpg" >
+    <meta property="og:image" content="https://solobored.github.io/wdd231/chamber/images/araucania.jpg">
     <meta property="og:url" content="https://solobored.github.io/wdd231/chamber/index.html">
     <link rel="icon" href="images/favicon.ico">
     <link rel="stylesheet" href="styles/normalize.css">
@@ -16,15 +16,16 @@
     <link rel="stylesheet" href="styles/medium.css">
     <link rel="stylesheet" href="styles/large.css">
     <script src="scripts/date.js" defer></script>
+    <script src="scripts/navigation.js" defer></script>
     <script src="scripts/weather.js" defer></script>
     <script src="scripts/spotlight.js" defer></script>
-
 </head>
 <body>
+    <a href="#main-content" class="skip-link">Skip to main content</a>
     <header>
         <div class="header-content">
             <a href="index.html" class="logo-container">
-                <img src="images/logo.webp" alt="Araucania Chamber of Commerce Logo" class="logo">
+                <img src="images/araucania.jpg" alt="Araucania Chamber of Commerce Logo" class="logo">
                 <div class="title-container">
                     <h1>Araucania</h1>
                     <p>Chamber of Commerce</p>
@@ -38,11 +39,11 @@
                     <img src="images/linkedin.webp" alt="LinkedIn" class="social-icon">
                 </a>
             </div>
-            <button class="hamburger" aria-label="Toggle Menu">☰</button>
+            <button class="hamburger" aria-label="Toggle Menu" aria-expanded="false" aria-controls="primary-navigation">☰</button>
         </div>
         <nav>
-            <ul>
-                <li><a href="index.html" class="active">Home</a></li>
+            <ul id="primary-navigation">
+                <li><a href="index.html" class="active" aria-current="page">Home</a></li>
                 <li><a href="discover.html">Discover</a></li>
                 <li><a href="directory.html">Directory</a></li>
                 <li><a href="join.html">Join</a></li>
@@ -54,9 +55,9 @@
         </div>
     </header>
     
-    <main class="home-main">
+    <main id="main-content" class="home-main">
         <div class="hero-container">
-            <img src="images/araucaria.jpg" alt="Araucania landscape" class="hero-image">
+            <img src="images/agricultural.webp" alt="Araucania landscape" class="hero-image">
             <div class="call-to-action">
                 <a href="join.html" class="cta-button">Join the Chamber</a>
             </div>
@@ -94,6 +95,7 @@
             <h2>Weather Forecast</h2>
             <div class="forecast-content">
                 <div id="forecast-container">
+                    <!-- Forecast data will be inserted here by JavaScript -->
                     <p>Loading forecast data...</p>
                 </div>
             </div>
@@ -102,7 +104,11 @@
         <section class="spotlight-section">
             <h2>Business Spotlights</h2>
             <div class="spotlight-container">
+                <!-- Spotlight data will be inserted here by JavaScript -->
                 <p>Loading business spotlights...</p>
+            </div>
+            <div style="text-align: center; margin-top: 1rem;">
+                <a href="directory.html" class="cta-button">View All Businesses</a>
             </div>
         </section>
     </main>
@@ -110,7 +116,7 @@
     <footer>
         <div class="footer-content">
             <div class="footer-info">
-                <img src="images/logo.webp" alt="Araucania Chamber of Commerce Logo" class="footer-logo">
+                <img src="images/araucania.jpg" alt="Araucania Chamber of Commerce Logo" class="footer-logo">
                 <div>
                     <h3>Araucania Chamber of Commerce</h3>
                     <p>123 Main Street, Temuco, Araucania, Chile</p>
@@ -119,12 +125,12 @@
             <div class="footer-contact">
                 <p>info@araucaniachamber.org</p>
                 <p>+56 45 123 4567</p>
-                <p><a href="#" class="location-map">Location Map</a></p>
+                <p><a href="https://maps.google.com/?q=Temuco,Chile" target="_blank" class="location-map">Location Map</a></p>
             </div>
         </div>
         <div class="footer-base">
-          <p>© <span id="current-year">2025</span> Araucania Chamber of Commerce | Josue Neiculeo | WDD 231</p>
-          <p id="last-updated">Last Updated: 03/17/2025 14:30:45</p>
+            <p>© <span id="current-year">2025</span> Araucania Chamber of Commerce | Josue Neiculeo | WDD 231</p>
+            <p id="last-updated">Last Updated: 03/17/2025 14:30:45</p>
         </div>
     </footer>
 </body>

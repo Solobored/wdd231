@@ -39,10 +39,12 @@ document.addEventListener("DOMContentLoaded", () => {
     const linkPath = link.getAttribute("href")
     if (currentPage.includes(linkPath) && linkPath !== "#" && linkPath !== "index.html") {
       link.classList.add("active")
+      link.setAttribute("aria-current", "page")
     } else if (currentPage.endsWith("/") || currentPage.endsWith("index.html")) {
       // If we're on the home page
       if (linkPath === "index.html" || linkPath === "./") {
         link.classList.add("active")
+        link.setAttribute("aria-current", "page")
       }
     }
   })

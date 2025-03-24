@@ -1,5 +1,6 @@
-
+// Business Spotlight script for Araucania Chamber of Commerce
 document.addEventListener("DOMContentLoaded", () => {
+  // Fetch member data
   async function fetchMembers() {
     try {
       const response = await fetch("data/members.json")
@@ -16,21 +17,28 @@ document.addEventListener("DOMContentLoaded", () => {
     }
   }
 
+  // Display business spotlights
   function displaySpotlights(members) {
+    // Filter for gold and silver members
     const eligibleMembers = members.filter(
       (member) => member.membershipLevel === "gold" || member.membershipLevel === "silver",
     )
 
+    // Shuffle the array to get random members
     const shuffledMembers = shuffleArray(eligibleMembers)
 
+    // Get 3 random members (or fewer if not enough eligible members)
     const spotlightCount = Math.min(3, shuffledMembers.length)
     const spotlightMembers = shuffledMembers.slice(0, spotlightCount)
 
+    // Get spotlight container
     const spotlightContainer = document.querySelector(".spotlight-container")
 
+    // Clear any existing content
     if (spotlightContainer) {
       spotlightContainer.innerHTML = ""
 
+      // Create spotlight elements
       spotlightMembers.forEach((member) => {
         const spotlight = document.createElement("div")
         spotlight.classList.add("spotlight")
@@ -41,6 +49,7 @@ document.addEventListener("DOMContentLoaded", () => {
           <p class="spotlight-phone">${member.phone}</p>
           <p class="spotlight-website"><a href="${member.website}" target="_blank">Website</a></p>
           <p class="spotlight-membership">${capitalizeFirstLetter(member.membershipLevel)} Member</p>
+          <p><a href="directory.html" class="spotlight-link">View in Directory</a></p>
         `
 
         spotlightContainer.appendChild(spotlight)
@@ -48,6 +57,7 @@ document.addEventListener("DOMContentLoaded", () => {
     }
   }
 
+  // Display error message for spotlights
   function displaySpotlightError() {
     const spotlightContainer = document.querySelector(".spotlight-container")
     if (spotlightContainer) {
@@ -55,6 +65,7 @@ document.addEventListener("DOMContentLoaded", () => {
     }
   }
 
+  // Helper function to shuffle array (Fisher-Yates algorithm)
   function shuffleArray(array) {
     const newArray = [...array]
     for (let i = newArray.length - 1; i > 0; i--) {
@@ -64,10 +75,12 @@ document.addEventListener("DOMContentLoaded", () => {
     return newArray
   }
 
+  // Helper function to capitalize first letter
   function capitalizeFirstLetter(string) {
     return string.charAt(0).toUpperCase() + string.slice(1)
   }
 
+  // Initialize spotlights
   fetchMembers()
 })
 
