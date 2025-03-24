@@ -1,15 +1,21 @@
-
+// Navigation script for Araucania Chamber of Commerce
 document.addEventListener("DOMContentLoaded", () => {
-
+  // Toggle mobile menu
   const hamburgerButton = document.querySelector(".hamburger")
   const navMenu = document.querySelector("nav ul")
 
   if (hamburgerButton && navMenu) {
     hamburgerButton.addEventListener("click", () => {
       navMenu.classList.toggle("show")
+      hamburgerButton.classList.toggle("active")
+
+      // Toggle aria-expanded attribute for accessibility
+      const expanded = hamburgerButton.getAttribute("aria-expanded") === "true" || false
+      hamburgerButton.setAttribute("aria-expanded", !expanded)
     })
   }
 
+  // Close menu when clicking outside
   document.addEventListener("click", (event) => {
     if (
       navMenu &&
@@ -18,45 +24,45 @@ document.addEventListener("DOMContentLoaded", () => {
       !event.target.closest(".hamburger")
     ) {
       navMenu.classList.remove("show")
+      if (hamburgerButton) {
+        hamburgerButton.classList.remove("active")
+        hamburgerButton.setAttribute("aria-expanded", "false")
+      }
     }
   })
 
-  const darkModeToggle = document.getElementById("dark-mode-toggle")
-  const body = document.body
-
-  const savedTheme = localStorage.getItem("theme")
-  if (savedTheme === "dark") {
-    body.classList.add("dark-mode")
-  }
-
-  if (darkModeToggle) {
-    darkModeToggle.addEventListener("click", () => {
-      body.classList.toggle("dark-mode")
-
-      if (body.classList.contains("dark-mode")) {
-        localStorage.setItem("theme", "dark")
-      } else {
-        localStorage.setItem("theme", "light")
-      }
-    })
-  }
-
+  // Highlight current page in navigation
   const currentPage = window.location.pathname
   const navLinks = document.querySelectorAll("nav a")
 
   navLinks.forEach((link) => {
     const linkPath = link.getAttribute("href")
-    if (currentPage.includes(linkPath) && linkPath !== "#") {
+    if (currentPage.includes(linkPath) && linkPath !== "#" && linkPath !== "index.html") {
       link.classList.add("active")
+    } else if (currentPage.endsWith("/") || currentPage.endsWith("index.html")) {
+      // If we're on the home page
+      if (linkPath === "index.html" || linkPath === "./") {
+        link.classList.add("active")
+      }
     }
   })
 
+  // Check if we're on mobile or desktop and adjust menu visibility
   function handleResize() {
-    if (window.innerWidth > 768 && navMenu) {
+    const isMobile = window.innerWidth <= 767
+
+    if (!isMobile && navMenu) {
+      // On desktop, always show the menu
       navMenu.classList.remove("show")
+      if (hamburgerButton) {
+        hamburgerButton.classList.remove("active")
+        hamburgerButton.setAttribute("aria-expanded", "false")
+      }
     }
   }
 
+  // Run on load and on resize
+  handleResize()
   window.addEventListener("resize", handleResize)
 })
 
