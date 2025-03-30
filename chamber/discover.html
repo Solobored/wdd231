@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0">
+    <title>Discover Araucanía - Araucania Chamber of Commerce</title>
+    <meta name="description" content="Discover the beautiful Araucanía region of Chile - Explore attractions, culture, and natural wonders in the heart of southern Chile">
+    <meta name="author" content="Josue Neiculeo">
+    <meta property="og:title" content="Discover Araucanía - Araucania Chamber of Commerce">
+    <meta property="og:type" content="website">
+    <meta property="og:image" content="https://solobored.github.io/wdd231/chamber/images/araucania-og.jpg">
+    <meta property="og:url" content="https://solobored.github.io/wdd231/chamber/discover.html">
+    <link rel="icon" href="images/favicon.ico">
+    <link rel="stylesheet" href="styles/normalize.css">
+    <link rel="stylesheet" href="styles/base.css">
+    <link rel="stylesheet" href="styles/medium.css">
+    <link rel="stylesheet" href="styles/large.css">
+    <script src="scripts/date.js" defer></script>
+    <script src="scripts/navigation.js" defer></script>
+    <script src="scripts/discover.js" defer></script>
+</head>
+<body>
+    <a href="#main-content" class="skip-link">Skip to main content</a>
+    <header>
+        <div class="header-content">
+            <a href="index.html" class="logo-container">
+                <img src="images/logo.webp" alt="Araucania Chamber of Commerce Logo" class="logo">
+                <div class="title-container">
+                    <h1>Araucania</h1>
+                    <p>Chamber of Commerce</p>
+                </div>
+            </a>
+            <div class="social-icons">
+                <a href="https://facebook.com" target="_blank" aria-label="Visit our Facebook page">
+                    <img src="images/facebook.webp" alt="Facebook" class="social-icon">
+                </a>
+                <a href="https://linkedin.com" target="_blank" aria-label="Visit our LinkedIn page">
+                    <img src="images/linkedin.webp" alt="LinkedIn" class="social-icon">
+                </a>
+            </div>
+            <button class="hamburger" aria-label="Toggle Menu" aria-expanded="false" aria-controls="primary-navigation">☰</button>
+        </div>
+        <nav>
+            <ul id="primary-navigation">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="discover.html" class="active" aria-current="page">Discover</a></li>
+                <li><a href="directory.html">Directory</a></li>
+                <li><a href="join.html">Join</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+        </nav>
+        <div class="date-banner">
+            <p id="current-date">Monday, March 17, 2025</p>
+        </div>
+    </header>
+    
+    <main id="main-content" class="discover-main">
+        <section class="discover-intro">
+            <h1>Discover Araucanía</h1>
+            <p>Welcome to the beautiful Araucanía region of Chile, a land of stunning natural landscapes, rich indigenous culture, and vibrant communities. Explore the attractions below to learn more about what makes our region special.</p>
+            
+            <div class="visit-info" id="visit-message">
+                <p>Loading visit information...</p>
+            </div>
+        </section>
+        
+        <section class="discover-demographics">
+            <h2>Araucanía Region Demographics</h2>
+            <div class="demographics-container">
+                <div class="demographic-item">
+                    <h3>Population</h3>
+                    <p>957,224 inhabitants</p>
+                </div>
+                <div class="demographic-item">
+                    <h3>Area</h3>
+                    <p>31,842 km² (12,294 sq mi)</p>
+                </div>
+                <div class="demographic-item">
+                    <h3>Capital</h3>
+                    <p>Temuco</p>
+                </div>
+                <div class="demographic-item">
+                    <h3>Indigenous Population</h3>
+                    <p>Approximately 32% Mapuche</p>
+                </div>
+                <div class="demographic-item">
+                    <h3>Main Industries</h3>
+                    <p>Agriculture, Forestry, Tourism</p>
+                </div>
+                <div class="demographic-item">
+                    <h3>Climate</h3>
+                    <p>Temperate oceanic climate</p>
+                </div>
+            </div>
+        </section>
+        
+        <section class="discover-attractions">
+            <h2>Explore Araucanía</h2>
+            <div class="attractions-container" id="attractions-container">
+                <p>Loading attractions...</p>
+            </div>
+        </section>
+    </main>
+    
+    <footer>
+        <div class="footer-content">
+            <div class="footer-info">
+                <img src="images/logo.webp" alt="Araucania Chamber of Commerce Logo" class="footer-logo">
+                <div>
+                    <h3>Araucania Chamber of Commerce</h3>
+                    <p>123 Main Street, Temuco, Araucania, Chile</p>
+                </div>
+            </div>
+            <div class="footer-contact">
+                <p>info@araucaniachamber.org</p>
+                <p>+56 45 123 4567</p>
+                <p><a href="https://maps.google.com/?q=Temuco,Chile" target="_blank" class="location-map">Location Map</a></p>
+            </div>
+        </div>
+        <div class="footer-base">
+            <p>© <span id="current-year">2025</span> Araucania Chamber of Commerce | Josue Neiculeo | WDD 231</p>
+            <p id="last-updated">Last Updated: 03/17/2025 14:30:45</p>
+        </div>
+    </footer>
+</body>
+</html>
+
