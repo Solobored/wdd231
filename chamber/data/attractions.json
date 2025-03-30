@@ -4,56 +4,63 @@
     "address": "Villarrica National Park, Araucanía Region, Chile",
     "description": "One of Chile's most active volcanoes, offering stunning views and hiking opportunities. The snow-capped volcano is a symbol of the Araucanía region and a popular destination for adventure tourism.",
     "image": "images/villarrica-volcano.webp",
-    "url": "https://rnvv.sernageomin.cl/volcan-villarrica/"
+    "url": "https://rnvv.sernageomin.cl/volcan-villarrica/",
+    "linkText": "Learn more about Villarrica Volcano"
   },
   {
     "name": "Conguillio National Park",
     "address": "Melipeuco, Araucanía Region, Chile",
     "description": "A breathtaking natural reserve featuring ancient araucaria forests, volcanic landscapes, and crystal-clear lakes. The park is home to the Llaima Volcano and offers numerous hiking trails.",
     "image": "images/conguillio-park.webp",
-    "url": "https://www.conaf.cl/parque_nacionales/parque-nacional-conguillio/"
+    "url": "https://www.conaf.cl/parque_nacionales/parque-nacional-conguillio/",
+    "linkText": "Explore Conguillio National Park"
   },
   {
     "name": "Mapuche Cultural Center",
     "address": "Av. Alemania 084, Temuco, Araucanía Region, Chile",
     "description": "Discover the rich heritage of the Mapuche people, the indigenous inhabitants of the Araucanía region. The center showcases traditional crafts, history, and cultural practices.",
     "image": "images/mapuche-center.webp",
-    "url": "https://www.conadi.gob.cl/noticias/inauguran-primer-centro-cultural-mapuche-en-los-alamos-con-apoyo-del-programa-chile-indigena-de-cona"
+    "url": "https://www.conadi.gob.cl/noticias/inauguran-primer-centro-cultural-mapuche-en-los-alamos-con-apoyo-del-programa-chile-indigena-de-cona",
+    "linkText": "Visit the Mapuche Cultural Center"
   },
   {
     "name": "Araucanía Market",
     "address": "Calle Bulnes 380, Temuco, Araucanía Region, Chile",
     "description": "A vibrant marketplace where local artisans sell traditional crafts, textiles, and agricultural products. Experience the authentic flavors and craftsmanship of the region.",
     "image": "images/araucania-market.webp",
-    "url": "https://www.interpatagonia.com/temuco/mercado-municipal.html"
+    "url": "https://www.interpatagonia.com/temuco/mercado-municipal.html",
+    "linkText": "Discover Araucanía Market"
   },
   {
     "name": "Huerquehue National Park",
     "address": "Pucón, Araucanía Region, Chile",
     "description": "A pristine natural area featuring three beautiful lakes, ancient forests, and diverse wildlife. The park offers excellent hiking opportunities and stunning panoramic views.",
     "image": "images/huerquehue-park.webp",
-    "url": "https://www.conaf.cl/parque_nacionales/parque-nacional-huerquehue/"
+    "url": "https://www.conaf.cl/parque_nacionales/parque-nacional-huerquehue/",
+    "linkText": "Learn more about Huerquehue National Park"
   },
   {
     "name": "Temuco Regional Museum",
     "address": "Av. Alemania 084, Temuco, Araucanía Region, Chile",
     "description": "Explore the history and culture of the Araucanía region through archaeological artifacts, historical exhibits, and interactive displays. The museum provides insights into both indigenous and colonial heritage.",
     "image": "images/temuco-museum.webp",
-    "url": "https://www.museoregionalaraucania.gob.cl/"
+    "url": "https://www.museoregionalaraucania.gob.cl/",
+    "linkText": "Visit the Temuco Regional Museum"
   },
   {
     "name": "Pucón Beach",
     "address": "Pucón, Araucanía Region, Chile",
     "description": "A beautiful black sand beach on the shores of Lake Villarrica, offering swimming, water sports, and stunning views of the Villarrica Volcano. A popular summer destination for locals and tourists.",
     "image": "images/pucon-beach.webp",
-    "url": "https://www.chile.travel/en/where-to-go/destination/pucon-and-villarrica/"
+    "url": "https://www.chile.travel/en/where-to-go/destination/pucon-and-villarrica/",
+    "linkText": "Explore Pucón Beach"
   },
   {
     "name": "Nahuelbuta National Park",
     "address": "Angol, Araucanía Region, Chile",
     "description": "Home to some of the oldest araucaria trees in Chile, this park offers unique biodiversity and breathtaking views of both the Andes Mountains and the Pacific Ocean on clear days.",
     "image": "images/nahuelbuta-park.webp",
-    "url": "https://www.conaf.cl/parque_nacionales/parque-nacional-nahuelbuta/"
+    "url": "https://www.conaf.cl/parque_nacionales/parque-nacional-nahuelbuta/",
+    "linkText": "Discover Nahuelbuta National Park"
   }
 ]
-

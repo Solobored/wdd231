@@ -1,9 +1,9 @@
 
 document.addEventListener("DOMContentLoaded", () => {
+
   displayVisitInfo()
 
   loadAttractions()
-
 
   function displayVisitInfo() {
     const visitMessage = document.getElementById("visit-message")
@@ -17,18 +17,14 @@ document.addEventListener("DOMContentLoaded", () => {
     if (!lastVisit) {
       message = "Welcome! Let us know if you have any questions."
     } else {
-
       const lastVisitDate = Number.parseInt(lastVisit)
       const daysDifference = Math.floor((currentDate - lastVisitDate) / (1000 * 60 * 60 * 24))
 
       if (daysDifference < 1) {
-
         message = "Back so soon! Awesome!"
       } else if (daysDifference === 1) {
-
         message = "You last visited 1 day ago."
       } else {
-
         message = `You last visited ${daysDifference} days ago.`
       }
     }
@@ -36,7 +32,6 @@ document.addEventListener("DOMContentLoaded", () => {
     if (visitMessage) {
       visitMessage.innerHTML = `<p>${message}</p>`
     }
-
 
     localStorage.setItem("lastVisit", currentDate)
   }
@@ -74,7 +69,7 @@ document.addEventListener("DOMContentLoaded", () => {
           <h2>${attraction.name}</h2>
           <address>${attraction.address}</address>
           <p>${attraction.description}</p>
-          <a href="${attraction.url}" class="learn-more" target="_blank">Learn More</a>
+          <a href="${attraction.url}" class="learn-more" target="_blank">Learn More About ${attraction.name}</a>
         `
 
         container.appendChild(card)

@@ -7,7 +7,7 @@
 
 :root {
   --primary-color: #1e4620;
-  --secondary-color: #3a5a3a; /* Darkened from #5a7d5a to meet AAA contrast */
+  --secondary-color: #3a5a3a; 
   --accent-color: #2a4a2a;
   --text-color: #333;
   --light-bg: #f5f5f5;
@@ -24,6 +24,7 @@ body {
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 }
 
+/* Header Styles */
 header {
   background-color: white;
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
@@ -70,6 +71,7 @@ header {
   height: 30px;
 }
 
+/* Hamburger Menu */
 .hamburger {
   display: block;
   background: none;
@@ -84,6 +86,7 @@ header {
   color: var(--secondary-color);
 }
 
+/* Navigation */
 nav {
   background-color: var(--primary-color);
   width: 100%;
@@ -109,6 +112,7 @@ nav ul {
     display: block;
   }
 }
+
 
 @media screen and (min-width: 768px) {
   nav ul {
@@ -140,6 +144,7 @@ nav a.active {
   background-color: var(--secondary-color);
 }
 
+/* Date Banner */
 .date-banner {
   background-color: white;
   padding: 0.5rem;
@@ -147,6 +152,7 @@ nav a.active {
   border-bottom: 1px solid var(--border-color);
 }
 
+/* Main Content */
 .directory-main,
 .join-main,
 .thankyou-main,
@@ -162,6 +168,7 @@ nav a.active {
   color: var(--text-color);
 }
 
+/* Join Page Styles */
 .form-intro {
   margin-bottom: 1.5rem;
 }
@@ -215,6 +222,7 @@ textarea {
   background-color: var(--secondary-color);
 }
 
+/* Membership Cards */
 .membership-levels h2 {
   margin: 2rem 0 1rem;
   text-align: center;
@@ -289,6 +297,7 @@ textarea {
   background-color: var(--secondary-color);
 }
 
+/* Modal Styles */
 .modal {
   display: none;
   position: fixed;
@@ -331,6 +340,7 @@ textarea {
   margin-bottom: 0.5rem;
 }
 
+/* Thank You Page Styles */
 .thankyou-section {
   max-width: 800px;
   margin: 0 auto;
@@ -379,6 +389,7 @@ textarea {
   background-color: var(--secondary-color);
 }
 
+/* View Buttons */
 .view-buttons {
   display: flex;
   justify-content: flex-end;
@@ -403,22 +414,26 @@ textarea {
   height: 20px;
 }
 
+/* Directory Container */
 #directory-container {
   margin-top: 1rem;
 }
 
+/* Grid View */
 .grid-view {
   display: grid;
   grid-template-columns: 1fr;
   gap: 1rem;
 }
 
+/* List View */
 .list-view {
   display: flex;
   flex-direction: column;
   gap: 0.5rem;
 }
 
+/* Directory Card */
 .directory-card {
   border: 1px solid var(--border-color);
   border-radius: 5px;
@@ -494,6 +509,7 @@ textarea {
   grid-column: 3;
 }
 
+/* Footer Styles */
 footer {
   background-color: #f5f5f5;
   border-top: 1px solid var(--border-color);
@@ -543,6 +559,7 @@ footer {
   gap: 0.5rem;
 }
 
+/* Home Page Styles */
 .hero-container {
   position: relative;
   margin-bottom: 2rem;
@@ -575,6 +592,7 @@ footer {
   background-color: var(--secondary-color);
 }
 
+/* Section Styles */
 .events-section,
 .weather-section,
 .forecast-section,
@@ -624,6 +642,7 @@ footer {
   margin-bottom: 1rem;
 }
 
+/* Weather Styles */
 .weather-icon-temp {
   display: flex;
   align-items: center;
@@ -641,6 +660,7 @@ footer {
   font-weight: bold;
 }
 
+/* Forecast Styles */
 .forecast-day {
   margin-bottom: 1rem;
   padding-bottom: 0.5rem;
@@ -653,6 +673,7 @@ footer {
   border-bottom: none;
 }
 
+/* Spotlight Styles */
 .spotlight-container {
   display: flex;
   flex-direction: column;
@@ -698,6 +719,7 @@ footer {
   font-size: 0.8rem;
 }
 
+/* Skip to content link for accessibility */
 .skip-link {
   position: absolute;
   top: -40px;
@@ -713,6 +735,7 @@ footer {
   top: 0;
 }
 
+/* Current page indicator for wayfinding */
 nav a.active::after {
   content: "";
   display: block;
@@ -722,6 +745,7 @@ nav a.active::after {
   margin: 5px auto 0;
 }
 
+/* Spotlight link to directory */
 .spotlight-link {
   display: inline-block;
   background-color: var(--primary-color);
@@ -737,15 +761,16 @@ nav a.active::after {
   background-color: var(--secondary-color);
 }
 
+/* View all businesses button container */
 .view-all-container {
   text-align: center;
   margin-top: 1rem;
 }
 
+/* Discover Page Styles */
 .discover-intro {
-  margin-top: 2rem;
-  text-align: center;
   margin-bottom: 2rem;
+  text-align: center;
 }
 
 .discover-intro p {
@@ -756,13 +781,14 @@ nav a.active::after {
 .visit-info {
   background-color: var(--primary-color);
   color: white;
-  padding: 3rem 1rem 1rem;
+  padding: 1rem;
   border-radius: 5px;
   margin: 1rem auto;
   max-width: 600px;
-  text-align: center;
+  padding: 3rem 1rem 1rem;
 }
 
+/* Demographics Section */
 .discover-demographics {
   margin-bottom: 2rem;
 }
@@ -794,6 +820,7 @@ nav a.active::after {
   margin-bottom: 0.5rem;
 }
 
+/* Attractions Section */
 .discover-attractions {
   margin-bottom: 2rem;
 }
@@ -810,6 +837,7 @@ nav a.active::after {
   gap: 2rem;
 }
 
+/* Attraction Card Styles */
 .attraction-card {
   border: 1px solid var(--border-color);
   border-radius: 5px;
@@ -874,12 +902,15 @@ nav a.active::after {
   text-align: center;
   text-decoration: none;
   display: inline-block;
+  width: auto; 
+  max-width: 100%; 
 }
 
 .attraction-card .learn-more:hover {
   background-color: var(--secondary-color);
 }
 
+/* Apply hover effect only on larger screens */
 @media screen and (min-width: 641px) {
   .attraction-card figure:hover img {
     transform: scale(1.05);
