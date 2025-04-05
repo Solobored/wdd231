@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Recipe Results - MealMatch</title>
+    <meta name="description" content="Browse recipes based on your ingredients. Filter by dietary preferences and cooking time to find the perfect meal.">
+    
+    <meta property="og:title" content="Recipe Results - MealMatch">
+    <meta property="og:description" content="Browse recipes based on your ingredients. Filter by dietary preferences and cooking time.">
+    <meta property="og:image" content="images/mealmatch-social.webp">
+    <meta property="og:url" content="https://yourusername.github.io/wdd231/project/recipes.html">
+    <meta property="og:type" content="website">
+    
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Recipe Results - MealMatch">
+    <meta name="twitter:description" content="Browse recipes based on your ingredients. Filter by dietary preferences and cooking time.">
+    <meta name="twitter:image" content="images/mealmatch-social.webp">
+    
+
+    <link rel="icon" href="images/favicon.ico">
+    <link rel="apple-touch-icon" href="images/apple-touch-icon.png">
+    
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&family=Open+Sans:wght@400;600&family=Playfair+Display:ital@0;1&display=swap" rel="stylesheet">
+    
+
+    <link rel="stylesheet" href="styles/normalize.css">
+    <link rel="stylesheet" href="styles/style.css">
+    
+
+    <script type="module" src="js/recipes.js" defer></script>
+</head>
+<body>
+    <header>
+        <div class="header-container">
+            <div class="logo">
+                <a href="index.html">
+                    <img src="images/mealmatch-logo.webp" alt="MealMatch Logo" width="150" height="50">
+                </a>
+            </div>
+            <nav>
+                <button class="menu-toggle" aria-label="Toggle Menu">
+                    <span class="hamburger"></span>
+                </button>
+                <ul class="nav-menu">
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="recipes.html" class="active" aria-current="page">Recipes</a></li>
+                    <li><a href="feedback.html">Feedback</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+    
+    <main>
+        <section class="search-results-header">
+            <h1>Recipe Results</h1>
+            <div class="search-form-container">
+                <form id="search-form" class="search-form" action="recipes.html" method="get">
+                    <div class="search-container">
+                        <input type="text" id="ingredient-search" name="ingredients" placeholder="Enter ingredients (e.g., chicken, pasta, tomatoes)" required>
+                        <button type="submit" class="search-button">Find Recipes</button>
+                    </div>
+                    <div class="search-options">
+                        <label for="diet-preference">
+                            <span>Dietary Preference:</span>
+                            <select id="diet-preference" name="diet">
+                                <option value="">Any</option>
+                                <option value="vegetarian">Vegetarian</option>
+                                <option value="vegan">Vegan</option>
+                                <option value="gluten-free">Gluten-Free</option>
+                            </select>
+                        </label>
+                    </div>
+                </form>
+            </div>
+        </section>
+        
+        <section class="search-results">
+            <div class="filters">
+                <h2>Filters</h2>
+                <div class="filter-group">
+                    <h3>Cooking Time</h3>
+                    <div class="filter-options">
+                        <label>
+                            <input type="checkbox" name="time" value="15"> Under 15 minutes
+                        </label>
+                        <label>
+                            <input type="checkbox" name="time" value="30"> Under 30 minutes
+                        </label>
+                        <label>
+                            <input type="checkbox" name="time" value="60"> Under 60 minutes
+                        </label>
+                    </div>
+                </div>
+                <div class="filter-group">
+                    <h3>Meal Type</h3>
+                    <div class="filter-options">
+                        <label>
+                            <input type="checkbox" name="meal" value="breakfast"> Breakfast
+                        </label>
+                        <label>
+                            <input type="checkbox" name="meal" value="lunch"> Lunch
+                        </label>
+                        <label>
+                            <input type="checkbox" name="meal" value="dinner"> Dinner
+                        </label>
+                        <label>
+                            <input type="checkbox" name="meal" value="dessert"> Dessert
+                        </label>
+                    </div>
+                </div>
+                <button id="apply-filters" class="button">Apply Filters</button>
+            </div>
+            
+            <div class="results-container">
+                <div id="search-summary">
+                </div>
+                
+                <div id="recipe-results" class="recipe-grid">
+                    <div class="loading">Searching for recipes...</div>
+                </div>
+            </div>
+        </section>
+    </main>
+    
+    <footer>
+        <div class="footer-container">
+            <div class="footer-section">
+                <h3>MealMatch</h3>
+                <p>Your ingredient-based recipe finder to reduce food waste and inspire delicious meals.</p>
+            </div>
+            <div class="footer-section">
+                <h3>Quick Links</h3>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="recipes.html">Recipes</a></li>
+                    <li><a href="feedback.html">Feedback</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h3>Connect</h3>
+                <ul class="social-links">
+                    <li><a href="#" aria-label="Facebook">Facebook</a></li>
+                    <li><a href="#" aria-label="Instagram">Instagram</a></li>
+                    <li><a href="#" aria-label="Pinterest">Pinterest</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2025 MealMatch | <a href="attributions.html">Attributions</a></p>
+        </div>
+    </footer>
+    
+    <div id="recipe-modal" class="modal">
+        <div class="modal-content">
+            <span class="close-modal" aria-label="Close modal">&times;</span>
+            <div id="modal-recipe-content">
+            </div>
+        </div>
+    </div>
+</body>
+</html>
+

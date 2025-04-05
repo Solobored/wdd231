@@ -1,0 +1,83 @@
+{
+  "recipes": [
+    {
+      "id": 1,
+      "title": "Spaghetti Carbonara",
+      "image": "images/carbonara.webp",
+      "readyInMinutes": 25,
+      "servings": 4,
+      "summary": "A classic Italian pasta dish with eggs, cheese, pancetta, and black pepper. Simple yet delicious!",
+      "vegetarian": false,
+      "vegan": false,
+      "glutenFree": false,
+      "dairyFree": false,
+      "diets": []
+    },
+    {
+      "id": 2,
+      "title": "Vegetable Stir Fry",
+      "image": "images/stirfry.webp",
+      "readyInMinutes": 20,
+      "servings": 3,
+      "summary": "A quick and healthy stir fry loaded with colorful vegetables and a savory sauce.",
+      "vegetarian": true,
+      "vegan": true,
+      "glutenFree": true,
+      "dairyFree": true,
+      "diets": ["vegetarian", "vegan", "gluten-free"]
+    },
+    {
+      "id": 3,
+      "title": "Chicken Parmesan",
+      "image": "images/chicken-parmesan.webp",
+      "readyInMinutes": 45,
+      "servings": 4,
+      "summary": "Breaded chicken cutlets topped with marinara sauce and melted cheese, served with pasta.",
+      "vegetarian": false,
+      "vegan": false,
+      "glutenFree": false,
+      "dairyFree": false,
+      "diets": []
+    },
+    {
+      "id": 4,
+      "title": "Quinoa Salad",
+      "image": "images/quinoa-salad.webp",
+      "readyInMinutes": 15,
+      "servings": 2,
+      "summary": "A nutritious salad with quinoa, fresh vegetables, and a light vinaigrette dressing.",
+      "vegetarian": true,
+      "vegan": true,
+      "glutenFree": true,
+      "dairyFree": true,
+      "diets": ["vegetarian", "vegan", "gluten-free"]
+    },
+    {
+      "id": 5,
+      "title": "Beef Tacos",
+      "image": "images/beef-tacos.webp",
+      "readyInMinutes": 30,
+      "servings": 4,
+      "summary": "Seasoned ground beef served in corn tortillas with fresh toppings and salsa.",
+      "vegetarian": false,
+      "vegan": false,
+      "glutenFree": true,
+      "dairyFree": false,
+      "diets": ["gluten-free"]
+    },
+    {
+      "id": 6,
+      "title": "Mushroom Risotto",
+      "image": "images/mushroom-risotto.webp",
+      "readyInMinutes": 40,
+      "servings": 4,
+      "summary": "Creamy Italian rice dish with mushrooms, white wine, and Parmesan cheese.",
+      "vegetarian": true,
+      "vegan": false,
+      "glutenFree": true,
+      "dairyFree": false,
+      "diets": ["vegetarian", "gluten-free"]
+    }
+  ]
+}
+

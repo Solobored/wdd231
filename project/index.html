@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MealMatch - Find Recipes with Your Ingredients</title>
+    <meta name="description" content="MealMatch helps you discover delicious recipes based on ingredients you already have in your kitchen. Reduce food waste and find meal inspiration.">
+    
+    <meta property="og:title" content="MealMatch - Find Recipes with Your Ingredients">
+    <meta property="og:description" content="Discover recipes based on ingredients you already have. Reduce food waste and find meal inspiration.">
+    <meta property="og:image" content="images/mealmatch-social.webp">
+    <meta property="og:url" content="https://yourusername.github.io/wdd231/project/">
+    <meta property="og:type" content="website">
+    
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="MealMatch - Find Recipes with Your Ingredients">
+    <meta name="twitter:description" content="Discover recipes based on ingredients you already have. Reduce food waste and find meal inspiration.">
+    <meta name="twitter:image" content="images/mealmatch-social.webp">
+    
+    <link rel="icon" href="images/favicon.ico">
+    <link rel="apple-touch-icon" href="images/apple-touch-icon.png">
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&family=Open+Sans:wght@400;600&family=Playfair+Display:ital@0;1&display=swap" rel="stylesheet">
+    
+    <!-- Styles -->
+    <link rel="stylesheet" href="styles/normalize.css">
+    <link rel="stylesheet" href="styles/style.css">
+    
+    <script type="module" src="js/main.js" defer></script>
+</head>
+<body>
+    <header>
+        <div class="header-container">
+            <div class="logo">
+                <a href="index.html">
+                    <img src="images/mealmatch-logo.webp" alt="MealMatch Logo" width="150" height="50">
+                </a>
+            </div>
+            <nav>
+                <button class="menu-toggle" aria-label="Toggle Menu">
+                    <span class="hamburger"></span>
+                </button>
+                <ul class="nav-menu">
+                    <li><a href="index.html" class="active" aria-current="page">Home</a></li>
+                    <li><a href="recipes.html">Recipes</a></li>
+                    <li><a href="feedback.html">Feedback</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+    
+    <main>
+        <section class="hero">
+            <div class="hero-content">
+                <h1>Find Recipes with Your Ingredients</h1>
+                <p>Enter ingredients you have on hand and discover delicious recipes to make with them.</p>
+                <form id="search-form" class="search-form" action="recipes.html" method="get">
+                    <div class="search-container">
+                        <input type="text" id="ingredient-search" name="ingredients" placeholder="Enter ingredients (e.g., chicken, pasta, tomatoes)" required>
+                        <button type="submit" class="search-button">Find Recipes</button>
+                    </div>
+                    <div class="search-options">
+                        <label for="diet-preference">
+                            <span>Dietary Preference:</span>
+                            <select id="diet-preference" name="diet">
+                                <option value="">Any</option>
+                                <option value="vegetarian">Vegetarian</option>
+                                <option value="vegan">Vegan</option>
+                                <option value="gluten-free">Gluten-Free</option>
+                            </select>
+                        </label>
+                    </div>
+                </form>
+            </div>
+            <div class="hero-image">
+                <img src="images/cooking-hero.webp" alt="Cooking with fresh ingredients" width="600" height="400">
+            </div>
+        </section>
+        
+        <section class="recent-searches">
+            <h2>Recent Searches</h2>
+            <div id="recent-searches-container" class="recent-searches-container">
+                <p class="no-searches">Your recent searches will appear here.</p>
+            </div>
+        </section>
+        
+        <section class="featured-recipes">
+            <h2>Featured Recipes</h2>
+            <div id="featured-recipes-container" class="recipe-grid">
+                <div class="loading">Loading featured recipes...</div>
+            </div>
+        </section>
+        
+        <section class="how-it-works">
+            <h2>How It Works</h2>
+            <div class="steps-container">
+                <div class="step">
+                    <div class="step-icon">1</div>
+                    <h3>Enter Ingredients</h3>
+                    <p>Type in ingredients you have available in your kitchen.</p>
+                </div>
+                <div class="step">
+                    <div class="step-icon">2</div>
+                    <h3>Discover Recipes</h3>
+                    <p>Browse through recipe suggestions that match your ingredients.</p>
+                </div>
+                <div class="step">
+                    <div class="step-icon">3</div>
+                    <h3>Start Cooking</h3>
+                    <p>Follow the recipe instructions and enjoy your homemade meal!</p>
+                </div>
+            </div>
+        </section>
+    </main>
+    
+    <footer>
+        <div class="footer-container">
+            <div class="footer-section">
+                <h3>MealMatch</h3>
+                <p>Your ingredient-based recipe finder to reduce food waste and inspire delicious meals.</p>
+            </div>
+            <div class="footer-section">
+                <h3>Quick Links</h3>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="recipes.html">Recipes</a></li>
+                    <li><a href="feedback.html">Feedback</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h3>Connect</h3>
+                <ul class="social-links">
+                    <li><a href="#" aria-label="Facebook">Facebook</a></li>
+                    <li><a href="#" aria-label="Instagram">Instagram</a></li>
+                    <li><a href="#" aria-label="Pinterest">Pinterest</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2025 MealMatch | <a href="attributions.html">Attributions</a></p>
+        </div>
+    </footer>
+    
+
+    <div id="recipe-modal" class="modal">
+        <div class="modal-content">
+            <span class="close-modal" aria-label="Close modal">&times;</span>
+            <div id="modal-recipe-content">
+            </div>
+        </div>
+    </div>
+</body>
+</html>
+
