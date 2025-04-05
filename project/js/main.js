@@ -3,6 +3,7 @@ import { fetchFeaturedRecipes } from "./modules/api.js"
 import { displayRecipes, displayRecentSearches, setupModal } from "./modules/ui.js"
 import { getRecentSearches, saveSearch } from "./modules/storage.js"
 
+
 const searchForm = document.getElementById("search-form")
 const ingredientSearch = document.getElementById("ingredient-search")
 const featuredRecipesContainer = document.getElementById("featured-recipes-container")
@@ -10,10 +11,10 @@ const recentSearchesContainer = document.getElementById("recent-searches-contain
 
 
 async function initApp() {
+
   setupEventListeners()
 
   displayRecentSearches(recentSearchesContainer, getRecentSearches())
-
 
   try {
     const featuredRecipes = await fetchFeaturedRecipes()
@@ -30,9 +31,7 @@ async function initApp() {
   setupModal()
 }
 
-
 function setupEventListeners() {
-
   if (searchForm) {
     searchForm.addEventListener("submit", (event) => {
       const ingredients = ingredientSearch.value.trim()

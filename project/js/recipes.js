@@ -3,29 +3,23 @@ import { searchRecipes } from "./modules/api.js"
 import { displayRecipes, setupModal } from "./modules/ui.js"
 import { saveSearch } from "./modules/storage.js"
 
-
 const searchForm = document.getElementById("search-form")
 const ingredientSearch = document.getElementById("ingredient-search")
 const recipeResults = document.getElementById("recipe-results")
 const searchSummary = document.getElementById("search-summary")
 const applyFiltersBtn = document.getElementById("apply-filters")
 
-
 async function initPage() {
 
   setupEventListeners()
 
-
   setupModal()
-
 
   const urlParams = new URLSearchParams(window.location.search)
   const ingredients = urlParams.get("ingredients")
   const diet = urlParams.get("diet")
 
-
   if (ingredients) {
-
     if (ingredientSearch) {
       ingredientSearch.value = ingredients
     }
@@ -50,17 +44,13 @@ async function initPage() {
   }
 }
 
-
 function setupEventListeners() {
-
   if (searchForm) {
     searchForm.addEventListener("submit", async (event) => {
       event.preventDefault()
 
-
       const ingredients = ingredientSearch.value.trim()
       const dietPreference = document.getElementById("diet-preference").value
-
 
       if (ingredients) {
         saveSearch(ingredients, dietPreference)
@@ -78,7 +68,6 @@ function setupEventListeners() {
       }
     })
   }
-
 
   if (applyFiltersBtn) {
     applyFiltersBtn.addEventListener("click", () => {
@@ -130,9 +119,7 @@ async function performSearch(ingredients, diet = "") {
   }
 }
 
-
 function applyFilters() {
-
   const recipesData = recipeResults.getAttribute("data-recipes")
   if (!recipesData) return
 
@@ -142,7 +129,6 @@ function applyFilters() {
     Number.parseInt(input.value),
   )
   const mealFilters = Array.from(document.querySelectorAll('input[name="meal"]:checked')).map((input) => input.value)
-
 
   let filteredRecipes = recipes
 

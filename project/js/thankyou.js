@@ -24,7 +24,6 @@ function displayFeedbackDetails(params) {
     detailsHTML += `<dt>Email:</dt><dd>${email}</dd>`
   }
 
-
   const feedbackType = params.get("feedback-type")
   if (feedbackType) {
     detailsHTML += `<dt>Feedback Type:</dt><dd>${formatFeedbackType(feedbackType)}</dd>`
@@ -106,6 +105,7 @@ function formatHowFound(source) {
       return source
   }
 }
+
 
 function setupMobileMenu() {
   const menuToggle = document.querySelector(".menu-toggle")

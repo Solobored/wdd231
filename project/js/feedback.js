@@ -5,8 +5,8 @@ import { setupModal } from "./modules/ui.js"
 const feedbackForm = document.getElementById("feedback-form")
 const timestampField = document.getElementById("timestamp")
 
-
 function initPage() {
+
   setupEventListeners()
 
   setupModal()
@@ -16,11 +16,9 @@ function initPage() {
   }
 }
 
-
 function setupEventListeners() {
   if (feedbackForm) {
     feedbackForm.addEventListener("submit", (event) => {
-
 
       const feedbackType = document.getElementById("feedback-type")
       const subject = document.getElementById("subject")
@@ -48,7 +46,6 @@ function setupEventListeners() {
       }
     })
   }
-
 
   const menuToggle = document.querySelector(".menu-toggle")
   const navMenu = document.querySelector(".nav-menu")

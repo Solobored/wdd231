@@ -136,6 +136,10 @@ export async function openRecipeModal(recipeId) {
     const { getRecipeDetails } = await import("./api.js")
     const recipe = await getRecipeDetails(recipeId)
 
+    if (!recipe) {
+      throw new Error("Recipe not found")
+    }
+
     // Display recipe details in the modal
     modalContent.innerHTML = `
       <div class="recipe-detail-header">
