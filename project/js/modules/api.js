@@ -10,7 +10,6 @@ export async function fetchFeaturedRecipes() {
   try {
 
 
-    // Using local data for demo
     const response = await fetch("data/featured-recipes.json")
     if (!response.ok) throw new Error("Failed to fetch featured recipes")
     const data = await response.json()
@@ -30,7 +29,6 @@ export async function fetchFeaturedRecipes() {
 export async function searchRecipes(ingredients, diet = "") {
   try {
 
-    // Using local data for demo
     const response = await fetch("data/search-results.json")
     if (!response.ok) throw new Error("Failed to search recipes")
     const data = await response.json()
@@ -66,7 +64,6 @@ export async function searchRecipes(ingredients, diet = "") {
 export async function getRecipeDetails(recipeId) {
   try {
 
-    // Using local data for demo
     const response = await fetch("data/recipe-details.json")
     if (!response.ok) throw new Error("Failed to get recipe details")
     const data = await response.json()
