@@ -138,7 +138,6 @@ export async function openRecipeModal(recipeId) {
       throw new Error("Recipe not found")
     }
 
-    // Display recipe details in the modal
     modalContent.innerHTML = `
       <div class="recipe-detail-header">
         <h2 class="recipe-detail-title">${recipe.title}</h2>
