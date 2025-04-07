@@ -1,4 +1,3 @@
-
 import { fetchFeaturedRecipes } from "./modules/api.js"
 import { displayRecipes, displayRecentSearches, setupModal } from "./modules/ui.js"
 import { getRecentSearches, saveSearch } from "./modules/storage.js"

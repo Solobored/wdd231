@@ -1,5 +1,3 @@
-// UI Module for MealMatch
-
 /**
  * Display recipes in a container
  * @param {HTMLElement} container - The container element

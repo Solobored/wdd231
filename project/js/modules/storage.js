@@ -1,5 +1,3 @@
-// Storage Module for MealMatch
-
 // Maximum number of recent searches to store
 const MAX_RECENT_SEARCHES = 5
 
