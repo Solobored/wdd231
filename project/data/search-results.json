@@ -167,7 +167,34 @@
       "dairyFree": true,
       "diets": ["vegetarian", "vegan", "gluten-free", "dairy-free"],
       "dishTypes": ["soup", "lunch", "dinner"]
+    },
+    {
+      "id": 113,
+      "title": "Tomato Basil Pasta",
+      "image": "images/tomato-basil-pasta.webp",
+      "readyInMinutes": 25,
+      "servings": 4,
+      "summary": "A simple and delicious pasta dish with fresh tomatoes, basil, and garlic. Perfect for a quick weeknight dinner.",
+      "vegetarian": true,
+      "vegan": false,
+      "glutenFree": false,
+      "dairyFree": false,
+      "diets": ["vegetarian"],
+      "dishTypes": ["lunch", "dinner", "main course"]
+    },
+    {
+      "id": 114,
+      "title": "Tomato Soup",
+      "image": "images/tomato-soup.webp",
+      "readyInMinutes": 30,
+      "servings": 4,
+      "summary": "A comforting homemade tomato soup made with fresh tomatoes, onions, and herbs. Serve with grilled cheese for a classic combination.",
+      "vegetarian": true,
+      "vegan": true,
+      "glutenFree": true,
+      "dairyFree": true,
+      "diets": ["vegetarian", "vegan", "gluten-free", "dairy-free"],
+      "dishTypes": ["soup", "lunch", "appetizer"]
     }
   ]
 }
-

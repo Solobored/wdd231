@@ -280,7 +280,61 @@
         { "name": "lemon juice", "original": "1 tbsp fresh lemon juice" }
       ],
       "instructions": "1. Heat olive oil in a large pot over medium heat. Add onion, carrots, and celery. Cook for 5 minutes until vegetables begin to soften.\n2. Add garlic and cook for 30 seconds until fragrant.\n3. Add potatoes, zucchini, green beans, and cabbage. Stir to combine.\n4. Add diced tomatoes with their juice, vegetable broth, bay leaf, thyme, and rosemary.\n5. Bring to a boil, then reduce heat to low. Cover and simmer for 20-25 minutes until all vegetables are tender.\n6. Remove bay leaf. Season with salt and pepper.\n7. Stir in fresh parsley and lemon juice just before serving.\n8. Serve hot with crusty bread if desired."
+    },
+    {
+      "id": 113,
+      "title": "Tomato Basil Pasta",
+      "image": "images/tomato-basil-pasta.webp",
+      "readyInMinutes": 25,
+      "servings": 4,
+      "summary": "A simple and delicious pasta dish with fresh tomatoes, basil, and garlic. Perfect for a quick weeknight dinner.",
+      "vegetarian": true,
+      "vegan": false,
+      "glutenFree": false,
+      "dairyFree": false,
+      "diets": ["vegetarian"],
+      "healthScore": 70,
+      "extendedIngredients": [
+        { "name": "pasta", "original": "12 oz spaghetti or linguine" },
+        { "name": "olive oil", "original": "3 tbsp olive oil" },
+        { "name": "garlic", "original": "4 cloves garlic, minced" },
+        { "name": "tomatoes", "original": "4 cups cherry tomatoes, halved" },
+        { "name": "basil", "original": "1/2 cup fresh basil leaves, torn" },
+        { "name": "parmesan cheese", "original": "1/2 cup grated Parmesan cheese" },
+        { "name": "salt", "original": "Salt to taste" },
+        { "name": "black pepper", "original": "Freshly ground black pepper to taste" },
+        { "name": "red pepper flakes", "original": "1/4 tsp red pepper flakes (optional)" }
+      ],
+      "instructions": "1. Bring a large pot of salted water to a boil. Cook pasta according to package directions until al dente. Reserve 1/2 cup of pasta water before draining.\n2. While pasta is cooking, heat olive oil in a large skillet over medium heat. Add garlic and cook for 30 seconds until fragrant.\n3. Add cherry tomatoes and cook for 5-7 minutes until they begin to burst and release their juices.\n4. Add red pepper flakes if using, and season with salt and pepper.\n5. Add the drained pasta to the skillet with the tomatoes. Toss to combine, adding a splash of reserved pasta water if needed to create a light sauce.\n6. Remove from heat and stir in torn basil leaves and Parmesan cheese.\n7. Serve immediately with additional Parmesan cheese if desired."
+    },
+    {
+      "id": 114,
+      "title": "Tomato Soup",
+      "image": "images/tomato-soup.webp",
+      "readyInMinutes": 30,
+      "servings": 4,
+      "summary": "A comforting homemade tomato soup made with fresh tomatoes, onions, and herbs. Serve with grilled cheese for a classic combination.",
+      "vegetarian": true,
+      "vegan": true,
+      "glutenFree": true,
+      "dairyFree": true,
+      "diets": ["vegetarian", "vegan", "gluten-free", "dairy-free"],
+      "healthScore": 85,
+      "extendedIngredients": [
+        { "name": "olive oil", "original": "2 tbsp olive oil" },
+        { "name": "onion", "original": "1 medium onion, diced" },
+        { "name": "garlic", "original": "3 cloves garlic, minced" },
+        { "name": "carrots", "original": "1 carrot, diced" },
+        { "name": "tomatoes", "original": "2 lbs fresh tomatoes, chopped" },
+        { "name": "tomato paste", "original": "2 tbsp tomato paste" },
+        { "name": "vegetable broth", "original": "4 cups vegetable broth" },
+        { "name": "basil", "original": "1/4 cup fresh basil leaves, plus more for garnish" },
+        { "name": "thyme", "original": "1 tsp dried thyme" },
+        { "name": "bay leaf", "original": "1 bay leaf" },
+        { "name": "salt", "original": "Salt to taste" },
+        { "name": "black pepper", "original": "Freshly ground black pepper to taste" }
+      ],
+      "instructions": "1. Heat olive oil in a large pot over medium heat. Add onion and carrot, and cook for 5 minutes until softened.\n2. Add garlic and cook for 30 seconds until fragrant.\n3. Add chopped tomatoes, tomato paste, thyme, and bay leaf. Stir to combine.\n4. Pour in vegetable broth and bring to a boil. Reduce heat and simmer for 15-20 minutes until tomatoes are very soft.\n5. Remove bay leaf and add fresh basil.\n6. Use an immersion blender to puree the soup until smooth. Alternatively, carefully transfer to a blender in batches.\n7. Season with salt and pepper to taste.\n8. Serve hot, garnished with additional fresh basil leaves."
     }
   ]
 }
-
